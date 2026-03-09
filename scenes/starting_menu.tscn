@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvp165ym5ef8l"]
+
+[node name="Starting menu" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -31.0
+offset_top = -11.0
+offset_right = 1161.0
+offset_bottom = 666.0
