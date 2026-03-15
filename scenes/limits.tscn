@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1c5bqlna555s"]
+
+[ext_resource type="Script" uid="uid://blexwnnghgchq" path="res://scripts/limits.gd" id="1_517l4"]
+
+[node name="limits" type="Node"]
+script = ExtResource("1_517l4")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciwbghcijujde"]
+
+[ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://01f7qtflsjj7" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dv045l0on8wsq" path="res://scenes/enemy_1.tscn" id="3_lnu2h"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_right = 1158.0
+offset_bottom = 652.0
+color = Color(0.252845, 0.1326395, 0.29746273, 1)
+
+[node name="main character" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(194, 107)
+
+[node name="enemy_1" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-228, 93)
+
+[node name="enemy_3" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-651, 139)
+
+[node name="enemy_4" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(189, -311)
+
+[node name="enemy_5" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(846, 84)
+
+[node name="enemy_2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(410, 103)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 108)
+zoom = Vector2(3, 3)

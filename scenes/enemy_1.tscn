@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv045l0on8wsq"]
+
+[ext_resource type="Script" uid="uid://ce8y6a4hn87bp" path="res://scripts/enemy_1.gd" id="1_a1412"]
+[ext_resource type="Texture2D" uid="uid://bpsqqeaf2anp4" path="res://images/sprites/nave_2.png" id="2_a1412"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
+radius = 10.049875
+
+[node name="enemy_1" type="Area2D" groups=["personajes"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_a1412")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_a1412")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dq62l")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
