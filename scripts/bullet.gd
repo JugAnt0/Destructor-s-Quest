@@ -7,7 +7,7 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
 
-	
+	rotation = direction.angle()
 	
 
 	

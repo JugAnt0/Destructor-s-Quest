@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpmbioe4drmn6"]
+
+[sub_resource type="Curve" id="Curve_bbfca"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4469697, 0.7191012), -6.9919724, -6.9919724, 0, 0, Vector2(0.6666667, 0.43820232), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_q6jx3"]
+curve = SubResource("Curve_bbfca")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ype4"]
+particle_flag_disable_z = true
+angle_min = -360.0
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_q6jx3")
+hue_variation_min = -0.010000022
+hue_variation_max = 0.009999977
+
+[node name="bullet_explosion" type="GPUParticles2D"]
+emitting = false
+amount = 30
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_7ype4")

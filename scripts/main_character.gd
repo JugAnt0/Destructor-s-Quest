@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 @onready var MainCharacter: CharacterBody2D = $"."
+@onready var ex: GPUParticles2D = $bullet_explosion
 
 var velocidad = 100.0
+
+var last_health := 5
 
 var bullet_scene = preload("res://scenes/bullet.tscn")
 
 var player : CharacterBody2D
 
-var shoot_cooldown = 1.2
+var shoot_cooldown = 1
 var can_shoot = true
 
 
@@ -32,7 +35,7 @@ func shoot():
 	
 func _ready() -> void:
 	MainCharacter.player = self
-	print("Player created")
+	last_health = Stats.vida
 	
 	
 func _physics_process(_delta):
@@ -41,6 +44,12 @@ func _physics_process(_delta):
 
 	velocity = direction * velocidad
 
+	if Stats.vida < last_health:
+		ex.restart()   
+
+	last_health = Stats.vida
+	
+	
 	move_and_slide()
 	
 	if Input.is_action_pressed("left_click"):

@@ -1,11 +1,15 @@
 extends Area2D
 
+@onready var icon: Sprite2D = $Icon
+
 var player : CharacterBody2D
 var speed := 60.0
 var health = 2
 var bullet_scene = preload("res://scenes/enemy_bullet.tscn")
 @onready var enemy: Area2D = $"."
 @onready var timer: Timer = $Timer
+@onready var ex: GPUParticles2D = $bullet_explosion
+var dead := false
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
@@ -21,7 +25,9 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta):
-
+	if dead:
+		return
+		
 	if player == null:
 		return
 
@@ -38,7 +44,14 @@ func _physics_process(delta):
 	look_at(player.global_position)
 	rotation += PI/2
 
-	if health <= 0:
+	if health <= 0 and !dead:
+		dead = true
+		speed = 0
+		timer.stop()
+		icon.hide()
+		$CollisionShape2D.disabled = true
+		ex.restart()
+		await get_tree().create_timer(1.5).timeout
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
@@ -46,6 +59,8 @@ func _on_body_entered(body: Node2D) -> void:
 		Stats.vida -= 1
 		
 	if body.is_in_group("player_bullet"):
+		
+		ex.restart()
 		health -= 1
 		body.queue_free()
 		

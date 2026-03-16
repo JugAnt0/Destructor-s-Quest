@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsq1v4bg37f4k"]
+[gd_scene load_steps=7 format=3 uid="uid://bsq1v4bg37f4k"]
 
 [ext_resource type="Script" uid="uid://csq7bj1m53uog" path="res://scripts/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://pxdt13qmygln" path="res://images/sprites/blue_bullet.png" id="2_y25gk"]
+[ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_l5glv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eoqba"]
 radius = 2.0
+
+[sub_resource type="Gradient" id="Gradient_qx7rs"]
+offsets = PackedFloat32Array(0, 0.67333335)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l5glv"]
+gradient = SubResource("Gradient_qx7rs")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Bullet" type="CharacterBody2D" groups=["player_bullet"]]
 collision_layer = 2
@@ -12,7 +22,18 @@ collision_mask = 2
 script = ExtResource("1_y25gk")
 
 [node name="Icon" type="Sprite2D" parent="."]
+rotation = 1.5719109
 texture = ExtResource("2_y25gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eoqba")
+
+[node name="bullet_explosion" parent="." instance=ExtResource("3_l5glv")]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.9073486e-06, 1.5199184e-06)
+scale = Vector2(0.78124994, 0.78125006)
+color = Color(0, 0.9346636, 0.9205941, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_l5glv")
