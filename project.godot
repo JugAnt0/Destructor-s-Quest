@@ -20,6 +20,7 @@ config/icon="res://images/icon.svg"
 Limits="*res://scenes/limits.tscn"
 Stats="*res://scenes/stats.tscn"
 Hearts="*res://scenes/hearts.tscn"
+LevelManager="*res://scenes/level_manager.tscn"
 
 [editor_plugins]
 
@@ -30,6 +31,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 personajes="enemies and player"
 player=""
 player_bullet=""
+enemy=""
 
 [gui]
 

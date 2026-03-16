@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var MainCharacter: CharacterBody2D = $"."
 @onready var ex: GPUParticles2D = $bullet_explosion
+@onready var icon: Sprite2D = $Icon
 
-var velocidad = 100.0
+var velocidad = Stats.velocidad
 
 var last_health := 5
 
@@ -11,7 +12,7 @@ var bullet_scene = preload("res://scenes/bullet.tscn")
 
 var player : CharacterBody2D
 
-var shoot_cooldown = 1
+
 var can_shoot = true
 
 
@@ -29,7 +30,7 @@ func shoot():
 	bullet.global_position = global_position + dir * 20
 	bullet.direction = dir
 	
-	await get_tree().create_timer(shoot_cooldown).timeout
+	await get_tree().create_timer(Stats.reload_speed).timeout
 	can_shoot = true
 	
 	
@@ -45,8 +46,12 @@ func _physics_process(_delta):
 	velocity = direction * velocidad
 
 	if Stats.vida < last_health:
+		
 		ex.restart()   
-
+		icon.modulate =  Color8(253, 0, 49, 255)
+		await get_tree().create_timer(0.1).timeout
+		icon.modulate =  Color8(255, 255, 255, 255)
+		
 	last_health = Stats.vida
 	
 	

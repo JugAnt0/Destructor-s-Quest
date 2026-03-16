@@ -5,7 +5,7 @@ var last_health = Stats.vida
 func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
-	
+	LevelManager.set_next_level("res://scenes/level_2.tscn")
 	
 
 
@@ -20,7 +20,8 @@ func _process(_delta: float) -> void:
 
 	# Save current health
 	last_health = Stats.vida
-
+	if get_tree().get_nodes_in_group("enemy").size() <= 0:
+		LevelManager.load_upgrade()
 
 func play_explosion(heart_index):
 	match heart_index:

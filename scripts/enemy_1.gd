@@ -61,8 +61,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_bullet"):
 		
 		ex.restart()
-		health -= 1
+		health -= Stats.daño
 		body.queue_free()
+		icon.modulate =  Color8(253, 0, 49, 255)
+		await get_tree().create_timer(0.1).timeout
+		icon.modulate =  Color8(255, 255, 255, 255)
 		
 func _on_timer_timeout() -> void:
 	shoot()

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceruspxd467dl"]
+
+[ext_resource type="Script" uid="uid://bmwb0ls2j0s6k" path="res://scripts/strength_upgrade.gd" id="1_1puh2"]
+[ext_resource type="Texture2D" uid="uid://ka1oajkf6mhn" path="res://images/sprites/damage_upgrade.png" id="1_yav2k"]
+[ext_resource type="Texture2D" uid="uid://b84khtgcvfx2m" path="res://images/sprites/damage_upgrade_hover.png" id="2_gvqm8"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_x7ujm"]
+
+[node name="Strength_Upgrade" type="TextureButton"]
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = -0.094000004
+anchor_right = 0.025
+anchor_bottom = 0.056
+offset_left = 27.648
+offset_top = 60.912003
+offset_right = -28.800001
+offset_bottom = -36.288002
+texture_normal = ExtResource("1_yav2k")
+texture_hover = ExtResource("2_gvqm8")
+script = ExtResource("1_1puh2")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 59.0
+offset_right = 72.0
+offset_bottom = 94.0
+scale = Vector2(0.845, 0.845)
+text = "Damage"
+
+[node name="description" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -55.0
+offset_top = -22.0
+offset_right = 135.0
+theme_override_fonts/font = ExtResource("4_x7ujm")
+theme_override_font_sizes/font_size = 19
+text = "Increase Damage to enemies"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
