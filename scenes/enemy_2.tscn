@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dykr76whgup0b"]
+
+[ext_resource type="Script" uid="uid://xd6w2h5xosuu" path="res://scripts/enemy_2.gd" id="1_oh86k"]
+[ext_resource type="Texture2D" uid="uid://cu8sl0vd27h2k" path="res://images/sprites/nave_3.png" id="2_a4ywr"]
+[ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_k4auq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdqbe"]
+radius = 6.0
+height = 24.0
+
+[node name="enemy_2" type="Area2D" groups=["enemy", "personajes"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_oh86k")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_a4ywr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fdqbe")
+
+[node name="bullet_explosion" parent="." instance=ExtResource("3_k4auq")]
+position = Vector2(0, -10)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

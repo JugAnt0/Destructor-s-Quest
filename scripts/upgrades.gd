@@ -6,7 +6,9 @@ var upgrades = [
 	preload("res://scenes/max_life_upgrade.tscn"),
 	preload("res://scenes/strength_upgrade.tscn"),
 	preload("res://scenes/upgrade_container.tscn"),
-	preload("res://scenes/cura.tscn")
+	preload("res://scenes/cura.tscn"),
+	preload("res://scenes/speed_upgrade.tscn"),
+	preload("uid://b3j1oy0ltsnmo")
 ]
 
 func _ready():

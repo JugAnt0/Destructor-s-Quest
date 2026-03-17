@@ -1,26 +1,16 @@
 extends Area2D
 
 @onready var icon: Sprite2D = $Icon
+
 var knockback = Stats.knockback
 var player : CharacterBody2D
-var speed := 60.0
-var health = 2
-var bullet_scene = preload("res://scenes/enemy_bullet.tscn")
+var speed := 120.0
+var health = 1
 @onready var enemy: Area2D = $"."
-@onready var timer: Timer = $Timer
 @onready var ex: GPUParticles2D = $bullet_explosion
 var dead := false
 
-func shoot():
-	var bullet = bullet_scene.instantiate()
-	get_parent().add_child(bullet)
 
-	var dir = transform.x.rotated(-PI/2)
-
-
-	bullet.global_position = global_position + dir * 20
-	bullet.direction = dir
-	
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
@@ -32,13 +22,9 @@ func _physics_process(delta):
 		return
 
 	var dir = (player.global_position - global_position).normalized()
+	
 	global_position += (dir * speed + knockback) * delta
 	knockback = knockback.move_toward(Vector2.ZERO, 300 * delta)
-	
-	
-	if global_position.distance_to(player.global_position) < 300:
-		if timer.is_stopped():
-			timer.start()
 	
 	
 	rotation += deg_to_rad(90)
@@ -48,7 +34,6 @@ func _physics_process(delta):
 	if health <= 0 and !dead:
 		dead = true
 		speed = 0
-		timer.stop()
 		icon.hide()
 		$CollisionShape2D.disabled = true
 		ex.restart()
@@ -58,10 +43,11 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Stats.vida -= 1
-		knockback = (global_position - body.global_position).normalized() * 150
+		knockback = (global_position - body.global_position).normalized() * 250
 	if body.is_in_group("player_bullet"):
 		body.pierce -= 1
 		knockback = (global_position - body.global_position).normalized() * Stats.player_knockback
+		
 		if body.pierce < 0:
 			body.queue_free()
 		ex.restart()
@@ -69,6 +55,3 @@ func _on_body_entered(body: Node2D) -> void:
 		icon.modulate =  Color8(253, 0, 49, 255)
 		await get_tree().create_timer(0.1).timeout
 		icon.modulate =  Color8(255, 255, 255, 255)
-		
-func _on_timer_timeout() -> void:
-	shoot()

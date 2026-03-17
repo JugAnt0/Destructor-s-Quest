@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://01f7qtflsjj7" path="res://scripts/game.gd" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://dv045l0on8wsq" path="res://scenes/enemy_1.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="5_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="8_dinhu"]
+[ext_resource type="PackedScene" uid="uid://dykr76whgup0b" path="res://scenes/enemy_2.tscn" id="8_gee14"]
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
@@ -306,17 +306,17 @@ zoom = Vector2(3, 3)
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy_1" parent="enemies" instance=ExtResource("3_lnu2h")]
-position = Vector2(-228, 93)
+[node name="enemy_6" parent="enemies" instance=ExtResource("8_gee14")]
+position = Vector2(411, 103)
 
-[node name="enemy_3" parent="enemies" instance=ExtResource("3_lnu2h")]
-position = Vector2(-651, 139)
+[node name="enemy_7" parent="enemies" instance=ExtResource("8_gee14")]
+position = Vector2(-229, 93)
 
-[node name="enemy_4" parent="enemies" instance=ExtResource("3_lnu2h")]
-position = Vector2(189, -311)
+[node name="enemy_8" parent="enemies" instance=ExtResource("8_gee14")]
+position = Vector2(190, -308)
 
-[node name="enemy_5" parent="enemies" instance=ExtResource("3_lnu2h")]
-position = Vector2(846, 84)
+[node name="enemy_9" parent="enemies" instance=ExtResource("8_gee14")]
+position = Vector2(981, 82)
 
-[node name="enemy_2" parent="enemies" instance=ExtResource("3_lnu2h")]
-position = Vector2(410, 103)
+[node name="enemy_10" parent="enemies" instance=ExtResource("8_gee14")]
+position = Vector2(-787, 142)

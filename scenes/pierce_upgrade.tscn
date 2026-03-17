@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3j1oy0ltsnmo"]
+
+[ext_resource type="Texture2D" uid="uid://rj8cla51m6j3" path="res://images/sprites/piercing_upgrade.png" id="1_utpck"]
+[ext_resource type="Texture2D" uid="uid://cxl665teamtpj" path="res://images/sprites/piercing_upgrade_hover.png" id="2_v6evv"]
+[ext_resource type="Script" uid="uid://dqunxqytykbs7" path="res://scripts/pierce_upgrade.gd" id="3_utpck"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_7pt00"]
+
+[node name="Pierce_Upgrade" type="TextureButton"]
+custom_minimum_size = Vector2(200, 260)
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = -0.094000004
+anchor_right = 0.025
+anchor_bottom = 0.056
+offset_left = 27.648
+offset_top = 60.912003
+offset_right = 171.2
+offset_bottom = 223.712
+texture_normal = ExtResource("1_utpck")
+texture_hover = ExtResource("2_v6evv")
+script = ExtResource("3_utpck")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 61.0
+offset_right = 78.0
+offset_bottom = 96.0
+scale = Vector2(0.845, 0.845)
+text = "Pierce"
+
+[node name="description" type="Label" parent="."]
+layout_mode = 0
+offset_left = -31.0
+offset_top = -22.0
+offset_right = 159.0
+theme_override_fonts/font = ExtResource("4_7pt00")
+theme_override_font_sizes/font_size = 19
+text = "Pierce 1 more enemy "
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -55,7 +55,7 @@ script = ExtResource("1_ne2mo")
 offset_left = -190.0
 offset_top = -165.0
 offset_right = 475.0
-offset_bottom = 283.0
+offset_bottom = 304.0
 mouse_filter = 2
 color = Color(5.6403223e-08, 0.07699909, 0.013088935, 1)
 
@@ -82,6 +82,11 @@ texture = ExtResource("2_ne2mo")
 [node name="Star5" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(417, 32)
+texture = ExtResource("2_ne2mo")
+
+[node name="Star25" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.22745098)
+position = Vector2(308, 289)
 texture = ExtResource("2_ne2mo")
 
 [node name="Star6" type="Sprite2D" parent="background"]
@@ -397,6 +402,27 @@ texture = ExtResource("4_que50")
 [node name="Star156" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(287, 259)
+texture = ExtResource("4_que50")
+
+[node name="Star162" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.22745098)
+position = Vector2(133, 294)
+texture = ExtResource("4_que50")
+
+[node name="Star163" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.22745098)
+position = Vector2(58, 274)
+texture = ExtResource("4_que50")
+
+[node name="Star165" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.22745098)
+position = Vector2(232, 293)
+texture = ExtResource("4_que50")
+
+[node name="Star166" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.22745098)
+position = Vector2(232, 293)
+rotation = 0.56421405
 texture = ExtResource("4_que50")
 
 [node name="Star157" type="Sprite2D" parent="background"]
