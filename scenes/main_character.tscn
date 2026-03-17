@@ -1,12 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://bniicox5ga132"]
+[gd_scene load_steps=11 format=3 uid="uid://bniicox5ga132"]
 
 [ext_resource type="Script" uid="uid://bwfgqe8h4qxs6" path="res://scripts/main_character.gd" id="1_ig48j"]
 [ext_resource type="Texture2D" uid="uid://dbwdgwiqey45g" path="res://images/sprites/nave_1.png" id="2_ig48j"]
 [ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_tqm6u"]
+[ext_resource type="Texture2D" uid="uid://cyiysb2fh7pq5" path="res://images/sprites/fire_motors.png" id="4_e6tc2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6tc2"]
 radius = 11.0
 height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6tc2"]
+atlas = ExtResource("4_e6tc2")
+region = Rect2(0, 0, 26, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0aba"]
+atlas = ExtResource("4_e6tc2")
+region = Rect2(26, 0, 26, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogw1n"]
+atlas = ExtResource("4_e6tc2")
+region = Rect2(52, 0, 26, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d0nc"]
+atlas = ExtResource("4_e6tc2")
+region = Rect2(78, 0, 26, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3a2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6tc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0aba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogw1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d0nc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="main character" type="CharacterBody2D" groups=["personajes", "player"]]
 script = ExtResource("1_ig48j")
@@ -18,3 +55,9 @@ texture = ExtResource("2_ig48j")
 shape = SubResource("CapsuleShape2D_e6tc2")
 
 [node name="bullet_explosion" parent="." instance=ExtResource("3_tqm6u")]
+
+[node name="FireMotors" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 14)
+sprite_frames = SubResource("SpriteFrames_d3a2h")
+autoplay = "default"
+frame_progress = 0.83866423

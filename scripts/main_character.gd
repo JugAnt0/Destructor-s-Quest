@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var MainCharacter: CharacterBody2D = $"."
 @onready var ex: GPUParticles2D = $bullet_explosion
 @onready var icon: Sprite2D = $Icon
+@onready var fire_motors: AnimatedSprite2D = $FireMotors
+
 
 var velocidad = Stats.velocidad
 
@@ -40,11 +42,14 @@ func _ready() -> void:
 	
 	
 func _physics_process(_delta):
-
+	
 	var direction = Input.get_vector("left", "right", "up", "down")
-
+	
 	velocity = direction * velocidad
-
+	if velocity == Vector2(0, 0):
+		fire_motors.hide()
+	else:
+		fire_motors.show()
 	if Stats.vida < last_health:
 		
 		ex.restart()   
