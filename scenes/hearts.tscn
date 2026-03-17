@@ -52,6 +52,18 @@ position = Vector2(512, 65)
 scale = Vector2(3, 3)
 texture = ExtResource("2_hugpe")
 
+[node name="heart9" type="Sprite2D" parent="Hearts"]
+visible = false
+position = Vector2(572, 65)
+scale = Vector2(3, 3)
+texture = ExtResource("2_hugpe")
+
+[node name="heart10" type="Sprite2D" parent="Hearts"]
+visible = false
+position = Vector2(632, 65)
+scale = Vector2(3, 3)
+texture = ExtResource("2_hugpe")
+
 [node name="hert_explosion1" parent="Hearts" instance=ExtResource("3_hugpe")]
 visible = false
 position = Vector2(92, 65)
@@ -90,4 +102,14 @@ scale = Vector2(3, 3)
 [node name="hert_explosion8" parent="Hearts" instance=ExtResource("3_hugpe")]
 visible = false
 position = Vector2(512, 65)
+scale = Vector2(3, 3)
+
+[node name="hert_explosion9" parent="Hearts" instance=ExtResource("3_hugpe")]
+visible = false
+position = Vector2(572, 65)
+scale = Vector2(3, 3)
+
+[node name="hert_explosion10" parent="Hearts" instance=ExtResource("3_hugpe")]
+visible = false
+position = Vector2(632, 65)
 scale = Vector2(3, 3)

@@ -9,6 +9,8 @@ extends Node
 @onready var heart_6: Sprite2D = $Hearts/heart6
 @onready var heart_7: Sprite2D = $Hearts/heart7
 @onready var heart_8: Sprite2D = $Hearts/heart8
+@onready var heart_9: Sprite2D = $Hearts/heart9
+@onready var heart_10: Sprite2D = $Hearts/heart10
 
 @onready var hert_explosion1: GPUParticles2D = $Hearts/hert_explosion1
 @onready var hert_explosion2: GPUParticles2D = $Hearts/hert_explosion2
@@ -18,6 +20,8 @@ extends Node
 @onready var hert_explosion6: GPUParticles2D = $Hearts/hert_explosion6
 @onready var hert_explosion7: GPUParticles2D = $Hearts/hert_explosion7
 @onready var hert_explosion8: GPUParticles2D = $Hearts/hert_explosion8
+@onready var hert_explosion9: GPUParticles2D = $Hearts/hert_explosion9
+@onready var hert_explosion10: GPUParticles2D = $Hearts/hert_explosion10
 
 
 	
