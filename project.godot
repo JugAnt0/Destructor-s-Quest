@@ -32,6 +32,7 @@ personajes="enemies and player"
 player=""
 player_bullet=""
 enemy=""
+ui=""
 
 [gui]
 

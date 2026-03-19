@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpikhcgee8jmo"]
+
+[ext_resource type="Script" uid="uid://ccv6adgrrlc0k" path="res://scripts/knocky_bullet.gd" id="1_qawxl"]
+[ext_resource type="Texture2D" uid="uid://8g6h5er2j8jd" path="res://images/sprites/green_bullet.png" id="2_qsucv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckxic"]
+radius = 2.0
+
+[sub_resource type="Gradient" id="Gradient_qx7rs"]
+offsets = PackedFloat32Array(0, 0.67333335)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_38r62"]
+gradient = SubResource("Gradient_qx7rs")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="knocky_bullet" type="CharacterBody2D"]
+script = ExtResource("1_qawxl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+rotation = 1.576528
+texture = ExtResource("2_qsucv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ckxic")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.9073486e-06, 1.5199184e-06)
+scale = Vector2(0.78124994, 0.78125006)
+color = Color(1, 0.59344685, 0.5273974, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_38r62")

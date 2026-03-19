@@ -522,3 +522,5 @@ position = Vector2(846, 84)
 
 [node name="enemy_2" parent="enemies" instance=ExtResource("7_g2hoc")]
 position = Vector2(410, 103)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]

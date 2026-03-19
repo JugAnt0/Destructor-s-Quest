@@ -3,9 +3,9 @@ extends Area2D
 @onready var icon: Sprite2D = $Icon
 var knockback = Stats.knockback
 var player : CharacterBody2D
-var speed := 60.0
-var health = 2
-var bullet_scene = preload("res://scenes/enemy_bullet.tscn")
+var speed := 30.0
+var health = 6
+var bullet_scene = preload("res://scenes/knocky_bullet.tscn")
 @onready var enemy: Area2D = $"."
 @onready var timer: Timer = $Timer
 @onready var ex: GPUParticles2D = $bullet_explosion
@@ -73,10 +73,10 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Stats.vida -= 1
-		knockback = (global_position - body.global_position).normalized() * 150
+		knockback = (global_position - body.global_position).normalized() * 100
 	if body.is_in_group("player_bullet"):
 		body.pierce -= 1
-		knockback = (global_position - body.global_position).normalized() * Stats.player_knockback
+		knockback = (global_position - body.global_position).normalized() * Stats.player_knockback - Vector2(20, 20)
 		if body.pierce < 0:
 			body.queue_free()
 		ex.restart()

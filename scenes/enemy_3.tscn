@@ -1,24 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv045l0on8wsq"]
+[gd_scene load_steps=11 format=3 uid="uid://dk2pbawxkrac5"]
 
-[ext_resource type="Script" uid="uid://ce8y6a4hn87bp" path="res://scripts/enemy_1.gd" id="1_a1412"]
-[ext_resource type="Texture2D" uid="uid://bpsqqeaf2anp4" path="res://images/sprites/nave_2.png" id="2_a1412"]
-[ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_ejytf"]
-[ext_resource type="Texture2D" uid="uid://boufw6qi5oxac" path="res://images/sprites/fire_motors_enemy_1.png" id="4_dq62l"]
+[ext_resource type="Script" uid="uid://cj8puaiuea68" path="res://scripts/enemy_3.gd" id="1_uj3uc"]
+[ext_resource type="Texture2D" uid="uid://bfqwhkdseciq8" path="res://images/sprites/nave_4.png" id="2_7nfes"]
+[ext_resource type="Texture2D" uid="uid://boufw6qi5oxac" path="res://images/sprites/fire_motors_enemy_1.png" id="3_7ipwp"]
+[ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="4_v1mu1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3026"]
-atlas = ExtResource("4_dq62l")
+atlas = ExtResource("3_7ipwp")
 region = Rect2(0, 0, 26, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l21ug"]
-atlas = ExtResource("4_dq62l")
+atlas = ExtResource("3_7ipwp")
 region = Rect2(26, 0, 26, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nrqq"]
-atlas = ExtResource("4_dq62l")
+atlas = ExtResource("3_7ipwp")
 region = Rect2(52, 0, 26, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oweuj"]
-atlas = ExtResource("4_dq62l")
+atlas = ExtResource("3_7ipwp")
 region = Rect2(78, 0, 26, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hcr21"]
@@ -44,27 +44,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
 radius = 11.0
 
-[node name="enemy_1" type="Area2D" groups=["enemy", "personajes"]]
+[node name="enemy_3" type="Area2D" groups=["enemy", "personajes"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_a1412")
+script = ExtResource("1_uj3uc")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_a1412")
+texture = ExtResource("2_7nfes")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icon"]
-position = Vector2(-1, 12)
+position = Vector2(-1, 11)
 sprite_frames = SubResource("SpriteFrames_hcr21")
 autoplay = "default"
 frame_progress = 0.9748049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_dq62l")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.3
 
-[node name="bullet_explosion" parent="." instance=ExtResource("3_ejytf")]
+[node name="bullet_explosion" parent="." instance=ExtResource("4_v1mu1")]
 position = Vector2(0, -9)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

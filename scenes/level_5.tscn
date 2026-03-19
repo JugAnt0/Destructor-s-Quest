@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://drop4im3334ft"]
+[gd_scene load_steps=14 format=3 uid="uid://dwbxfpippkiru"]
 
-[ext_resource type="Script" uid="uid://bwj2tlj4v7rvf" path="res://scripts/level_3.gd" id="1_wae8j"]
-[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="2_ha73p"]
-[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="3_vcx5n"]
-[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="4_56dhn"]
-[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="5_ax3dk"]
-[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="6_q2dsb"]
-[ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="7_p3r0x"]
-[ext_resource type="PackedScene" uid="uid://dv045l0on8wsq" path="res://scenes/enemy_1.tscn" id="8_5xqnf"]
-[ext_resource type="PackedScene" uid="uid://dykr76whgup0b" path="res://scenes/enemy_2.tscn" id="9_ha73p"]
+[ext_resource type="Script" uid="uid://ceglwlcs2ptk6" path="res://scripts/level_5.gd" id="1_uva14"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="2_vqwqk"]
+[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="3_1q3ip"]
+[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="4_e4ab4"]
+[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="5_xxvx7"]
+[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="6_68hud"]
+[ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="7_jwrea"]
+[ext_resource type="PackedScene" uid="uid://dv045l0on8wsq" path="res://scenes/enemy_1.tscn" id="8_ls1u8"]
+[ext_resource type="PackedScene" uid="uid://dykr76whgup0b" path="res://scenes/enemy_2.tscn" id="9_i670b"]
+[ext_resource type="PackedScene" uid="uid://dk2pbawxkrac5" path="res://scenes/enemy_3.tscn" id="10_vqwqk"]
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
@@ -47,8 +48,8 @@ _data = {
 &"move_map": SubResource("Animation_gee14")
 }
 
-[node name="level_3" type="Node2D"]
-script = ExtResource("1_wae8j")
+[node name="level_5" type="Node2D"]
+script = ExtResource("1_uva14")
 
 [node name="background" type="Node2D" parent="."]
 
@@ -58,439 +59,439 @@ offset_top = -157.0
 offset_right = 460.0
 offset_bottom = 318.0
 mouse_filter = 2
-color = Color(0.053684488, 0.030422123, 0, 1)
+color = Color(0.1208775, 0.08240221, 6.016344e-09, 1)
 
 [node name="SmallGalaxy1" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(254, 134)
-texture = ExtResource("2_ha73p")
+texture = ExtResource("2_vqwqk")
 
 [node name="SmallGalaxy3" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(46, 169)
-texture = ExtResource("2_ha73p")
+texture = ExtResource("2_vqwqk")
 
 [node name="SmallGalaxy2" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(447, 202)
-texture = ExtResource("2_ha73p")
+texture = ExtResource("2_vqwqk")
 
 [node name="Star4" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(222, 54)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star5" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(417, 32)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star25" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(342, 288)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star6" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(429, 230)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star26" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(47, 296)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star8" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(440, 241)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star20" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(301, 169)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star22" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(293, 158)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star23" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(288, 169)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star9" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(419, 241)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star18" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(91, 259)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star19" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-57, 168)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star11" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(93, 69)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star13" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-59, 121)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star14" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(173, 167)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star16" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-17, 147)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star17" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(216, -47)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star12" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(10, 46)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star15" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(135, 93)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star21" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(41, 122)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star24" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(269, 89)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star29" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(178, 17)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star30" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(123, -19)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star32" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(401, 182)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star33" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(381, 264)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star34" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(225, 231)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star35" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(252, 263)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star42" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(210, 289)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star43" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(217, 294)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star45" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(457, 296)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star36" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(455, 70)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star37" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(448, 80)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star38" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-20, 183)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star39" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(86, -51)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star41" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(186, -18)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star31" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(307, -9)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star40" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(330, 135)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star44" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(357, 26)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star47" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(248, 7)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star48" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(264, 19)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star51" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(353, 175)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star52" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(368, 196)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star54" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(341, 164)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star55" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-54, -12)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star61" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(82, 136)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star85" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(364, 111)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star104" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(36, 71)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star109" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-47, 59)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star110" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(279, -39)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star107" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-10, -4)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star105" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(-32, 69)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star106" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(4, 85)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star108" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(21, 203)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star114" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(1, 146)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star115" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(98, 180)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star117" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(121, 32)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star120" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(451, 153)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star121" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(326, 233)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star125" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(444, 284)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star122" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(185, 257)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star118" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(41, -46)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star119" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(344, -43)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star116" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(3, 3)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star123" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(241, 182)
-texture = ExtResource("6_q2dsb")
+texture = ExtResource("6_68hud")
 
 [node name="Star124" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(256, 203)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star130" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(229, 171)
-texture = ExtResource("4_56dhn")
+texture = ExtResource("4_e4ab4")
 
 [node name="Star152" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(189, 27)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star153" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(435, 140)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star162" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(299, 299)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star163" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(152, 299)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star165" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(114, 291)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star154" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(459, 12)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star155" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(376, -13)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star156" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(287, 259)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star157" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(341, 224)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star158" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(53, 228)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star159" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(22, 263)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star161" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(119, 236)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star160" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(57, 3)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star164" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(202, 80)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star168" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(109, 155)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="Star7" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(344, 76)
-texture = ExtResource("3_vcx5n")
+texture = ExtResource("3_1q3ip")
 
 [node name="Star10" type="Sprite2D" parent="background"]
 modulate = Color(1, 1, 1, 0.22745098)
 position = Vector2(117.999985, 198.00002)
 rotation = 0.011013674
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("5_ax3dk")
+texture = ExtResource("5_xxvx7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="background"]
 libraries = {
@@ -498,7 +499,7 @@ libraries = {
 }
 autoplay = "move_map"
 
-[node name="main character" parent="." instance=ExtResource("7_p3r0x")]
+[node name="main character" parent="." instance=ExtResource("7_jwrea")]
 position = Vector2(194, 107)
 
 [node name="Camera2D" type="Camera2D" parent="main character"]
@@ -513,28 +514,37 @@ position_smoothing_speed = 3.0
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy_1" parent="enemies" instance=ExtResource("8_5xqnf")]
-position = Vector2(-1068, 131)
+[node name="enemy_1" parent="enemies" instance=ExtResource("8_ls1u8")]
+position = Vector2(498, 124)
 
-[node name="enemy_10" parent="enemies" instance=ExtResource("8_5xqnf")]
-position = Vector2(1221, 728)
+[node name="enemy_2" parent="enemies" instance=ExtResource("8_ls1u8")]
+position = Vector2(-101, 124)
 
-[node name="enemy_8" parent="enemies" instance=ExtResource("8_5xqnf")]
-position = Vector2(794, -431)
+[node name="enemy_5" parent="enemies" instance=ExtResource("8_ls1u8")]
+position = Vector2(949, 31)
 
-[node name="enemy_9" parent="enemies" instance=ExtResource("8_5xqnf")]
-position = Vector2(-361, -431)
+[node name="enemy_6" parent="enemies" instance=ExtResource("8_ls1u8")]
+position = Vector2(946, 202)
 
-[node name="enemy_4" parent="enemies" instance=ExtResource("8_5xqnf")]
-position = Vector2(192, -747)
+[node name="enemy_3" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(170, -601)
 
-[node name="enemy_2" parent="enemies" instance=ExtResource("9_ha73p")]
-position = Vector2(539, 111)
+[node name="enemy_7" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(1180, 113)
 
-[node name="enemy_5" parent="enemies" instance=ExtResource("9_ha73p")]
-position = Vector2(-1071, 94)
+[node name="enemy_8" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(-852, 114)
 
-[node name="enemy_7" parent="enemies" instance=ExtResource("9_ha73p")]
-position = Vector2(1151, 62)
+[node name="enemy_9" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(-1007, 79)
+
+[node name="enemy_10" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(-1007, 179)
+
+[node name="enemy_4" parent="enemies" instance=ExtResource("9_i670b")]
+position = Vector2(162, 791)
+
+[node name="enemy_11" parent="enemies" instance=ExtResource("10_vqwqk")]
+position = Vector2(-609, 109)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
