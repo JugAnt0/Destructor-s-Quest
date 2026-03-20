@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjrrx1uiau4uw"]
+
+[ext_resource type="Script" uid="uid://blfjelyg8qwgg" path="res://scripts/enemy_4.gd" id="1_lkpdo"]
+[ext_resource type="Texture2D" uid="uid://dsogr3l2w3l2h" path="res://images/sprites/nave_6.png" id="2_ur2lb"]
+[ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_50ooa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
+radius = 11.0
+
+[node name="enemy_4" type="Area2D" groups=["enemy", "personajes"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lkpdo")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_ur2lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_dq62l")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="bullet_explosion" parent="." instance=ExtResource("3_50ooa")]
+position = Vector2(0, -9)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

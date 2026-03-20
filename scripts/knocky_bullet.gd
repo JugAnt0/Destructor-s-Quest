@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var knockback = Vector2.ZERO
-var speed = 150
+var speed = 100
 var direction = Vector2.ZERO
 
 func _physics_process(delta):
