@@ -2,6 +2,7 @@ extends TextureButton
 
 @onready var pierce_upgrade: TextureButton = $"."
 
+@onready var sound: AudioStreamPlayer2D = $sound
 
 
 @onready var description: Label = $description
@@ -20,6 +21,9 @@ func _process(_delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	sound.play()
+	await get_tree().create_timer(0.2).timeout
 	Stats.piercing += 1
 	LevelManager.go_to_next_level()
 	Hearts.hearts.show()
+	

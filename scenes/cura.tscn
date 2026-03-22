@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4mn5h8ml5k5y"]
+[gd_scene load_steps=6 format=3 uid="uid://b4mn5h8ml5k5y"]
 
-[ext_resource type="Texture2D" uid="uid://b0kecqvxny3f0" path="res://images/sprites/cura.png" id="1_rkatv"]
+[ext_resource type="Texture2D" uid="uid://b0kecqvxny3f0" path="res://assets/sprites/cura.png" id="1_rkatv"]
 [ext_resource type="Script" uid="uid://dr0umni8n4epr" path="res://scripts/cura.gd" id="1_t2obj"]
-[ext_resource type="Texture2D" uid="uid://daugxicmyoe1e" path="res://images/sprites/cura_hover.png" id="2_sqt11"]
-[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_sw8ij"]
+[ext_resource type="Texture2D" uid="uid://daugxicmyoe1e" path="res://assets/sprites/cura_hover.png" id="2_sqt11"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://assets/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_sw8ij"]
+[ext_resource type="AudioStream" uid="uid://wsmcub3q5qo1" path="res://assets/sounds/floraphonic-arcade-ui-6-229503.mp3" id="5_rkatv"]
 
 [node name="Cura" type="TextureButton"]
 custom_minimum_size = Vector2(200, 260)
@@ -37,5 +38,9 @@ offset_right = 128.0
 theme_override_fonts/font = ExtResource("4_sw8ij")
 theme_override_font_sizes/font_size = 19
 text = "Heal 3 hearts"
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rkatv")
+pitch_scale = 1.5
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

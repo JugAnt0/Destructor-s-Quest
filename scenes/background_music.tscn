@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://fa8g52qy2mbt"]
+
+[ext_resource type="AudioStream" uid="uid://dwsmvah1yk61i" path="res://assets/sounds/fanchisanchez-planckx27s-constant-la-constante-de-planck-127554.mp3" id="1_0rulj"]
+[ext_resource type="Script" uid="uid://b30co0nwgfrnv" path="res://scripts/background_music.gd" id="1_u6r47"]
+[ext_resource type="AudioStream" uid="uid://87b3fv1f08o6" path="res://assets/sounds/fanchisanchez-digital-overture-301435.mp3" id="3_vjuvc"]
+
+[node name="background_music" type="Node"]
+script = ExtResource("1_u6r47")
+
+[node name="normal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_0rulj")
+autoplay = true
+parameters/looping = true
+
+[node name="boss" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vjuvc")
+parameters/looping = true

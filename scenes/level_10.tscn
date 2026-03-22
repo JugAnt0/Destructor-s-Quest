@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://c5tspfrrotevg"]
 
 [ext_resource type="Script" uid="uid://cdu8exdloauor" path="res://scripts/level_10.gd" id="1_yxmu7"]
-[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="2_7d08f"]
-[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="3_68dkj"]
-[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="4_bg236"]
-[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="5_upujw"]
-[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="6_aa4c8"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_7d08f"]
+[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://assets/sprites/star_4.png" id="3_68dkj"]
+[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://assets/sprites/star_3.png" id="4_bg236"]
+[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://assets/sprites/star_2.png" id="5_upujw"]
+[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://assets/sprites/star_1.png" id="6_aa4c8"]
 [ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="7_hclxg"]
 [ext_resource type="PackedScene" uid="uid://dk2pbawxkrac5" path="res://scenes/enemy_3.tscn" id="8_av7uw"]
 [ext_resource type="PackedScene" uid="uid://srfeg24rujq4" path="res://scenes/mars.tscn" id="8_ng28g"]
@@ -50,6 +50,21 @@ _data = {
 &"move_map": SubResource("Animation_gee14")
 }
 
+[sub_resource type="Animation" id="Animation_yxmu7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(386, 118)]
+}
+
 [sub_resource type="Animation" id="Animation_ng28g"]
 resource_name = "move_in"
 length = 10.0
@@ -64,21 +79,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(511, 118), Vector2(395, 118), Vector2(386, 118)]
-}
-
-[sub_resource type="Animation" id="Animation_yxmu7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(386, 118)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7d08f"]
@@ -1356,6 +1356,15 @@ autoplay = "move_in"
 [node name="enemy_4" parent="Node2D" instance=ExtResource("9_g7gpa")]
 position = Vector2(1072, 38)
 
+[node name="enemy_29" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(1196, 178)
+
+[node name="enemy_27" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(2470, -151)
+
+[node name="enemy_28" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(2520, 232)
+
 [node name="enemy_11" parent="Node2D" instance=ExtResource("9_g7gpa")]
 position = Vector2(2840, 3)
 
@@ -1367,6 +1376,33 @@ position = Vector2(864, 153)
 
 [node name="enemy_6" parent="Node2D" instance=ExtResource("8_av7uw")]
 position = Vector2(939, 115)
+
+[node name="enemy_51" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(2041, -27)
+
+[node name="enemy_52" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(2039, 34)
+
+[node name="enemy_53" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(2036, 222)
+
+[node name="enemy_54" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(2039, 280)
+
+[node name="enemy_55" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(956, -429)
+
+[node name="enemy_56" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(1003, 767)
+
+[node name="enemy_24" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(1355, 269)
+
+[node name="enemy_26" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(1358, 71)
+
+[node name="enemy_25" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(1366, -106)
 
 [node name="enemy_17" parent="Node2D" instance=ExtResource("8_av7uw")]
 position = Vector2(2264, -96)
@@ -1383,11 +1419,80 @@ position = Vector2(2354, 30)
 [node name="enemy_5" parent="Node2D" instance=ExtResource("11_bg236")]
 position = Vector2(2384, 86)
 
+[node name="enemy_30" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(1953, -224)
+
+[node name="enemy_31" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(1946, 214)
+
+[node name="enemy_20" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(886, -292)
+
+[node name="enemy_21" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(916, -236)
+
+[node name="enemy_22" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(878, 421)
+
+[node name="enemy_23" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(908, 477)
+
 [node name="enemy_7" parent="Node2D" instance=ExtResource("11_bg236")]
 position = Vector2(2972, 22)
 
 [node name="enemy_8" parent="Node2D" instance=ExtResource("11_bg236")]
 position = Vector2(3002, 78)
+
+[node name="enemy_34" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(3415, 135)
+
+[node name="enemy_35" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(3831, 289)
+
+[node name="enemy_36" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(3834, 91)
+
+[node name="enemy_37" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(3842, -86)
+
+[node name="enemy_38" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(4740, -76)
+
+[node name="enemy_39" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(4742, 411)
+
+[node name="enemy_40" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(4736, 141)
+
+[node name="enemy_41" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(4830, 50)
+
+[node name="enemy_42" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(4860, 106)
+
+[node name="enemy_43" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(4429, -204)
+
+[node name="enemy_44" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(4422, 234)
+
+[node name="enemy_45" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(3362, -272)
+
+[node name="enemy_46" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(3392, -216)
+
+[node name="enemy_47" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(3354, 441)
+
+[node name="enemy_48" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(3384, 497)
+
+[node name="enemy_49" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(5448, 42)
+
+[node name="enemy_50" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(5478, 98)
 
 [node name="enemy_13" parent="Node2D" instance=ExtResource("11_bg236")]
 position = Vector2(4664, -634)
@@ -1409,6 +1514,13 @@ position = Vector2(1321, 1597)
 
 [node name="enemy_1" parent="Node2D" instance=ExtResource("12_upujw")]
 position = Vector2(1248, 67)
+
+[node name="enemy_32" parent="Node2D" instance=ExtResource("12_upujw")]
+position = Vector2(1665, -17)
+
+[node name="enemy_33" parent="Node2D" instance=ExtResource("12_upujw")]
+position = Vector2(1666.0001, 148)
+rotation = -2.198489
 
 [node name="limit" type="StaticBody2D" parent="."]
 

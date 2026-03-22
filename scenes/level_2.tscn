@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cvju07rid7usb"]
 
 [ext_resource type="Script" uid="uid://cfcb8uo2k8oyx" path="res://scripts/level_2.gd" id="1_ne2mo"]
-[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="1_y0kc7"]
-[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="2_ne2mo"]
-[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="3_6cvei"]
-[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="4_que50"]
-[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="5_hey2k"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="1_y0kc7"]
+[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://assets/sprites/star_4.png" id="2_ne2mo"]
+[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://assets/sprites/star_3.png" id="3_6cvei"]
+[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://assets/sprites/star_2.png" id="4_que50"]
+[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://assets/sprites/star_1.png" id="5_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="6_172wr"]
 [ext_resource type="PackedScene" uid="uid://dv045l0on8wsq" path="res://scenes/enemy_1.tscn" id="7_g2hoc"]
 

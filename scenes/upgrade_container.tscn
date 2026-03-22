@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7hdvfbb5kijk"]
+[gd_scene load_steps=6 format=3 uid="uid://c7hdvfbb5kijk"]
 
-[ext_resource type="Texture2D" uid="uid://csep8f3bft15w" path="res://images/sprites/reload_upgrade.png" id="1_myumb"]
+[ext_resource type="Texture2D" uid="uid://csep8f3bft15w" path="res://assets/sprites/reload_upgrade.png" id="1_myumb"]
 [ext_resource type="Script" uid="uid://b70kt7ur6t0sd" path="res://scripts/upgrade_container.gd" id="1_w4vlg"]
-[ext_resource type="Texture2D" uid="uid://d26elg5yo608i" path="res://images/sprites/reload_upgrade_hover.png" id="2_1a81d"]
-[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_1a81d"]
+[ext_resource type="Texture2D" uid="uid://d26elg5yo608i" path="res://assets/sprites/reload_upgrade_hover.png" id="2_1a81d"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://assets/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_1a81d"]
+[ext_resource type="AudioStream" uid="uid://wsmcub3q5qo1" path="res://assets/sounds/floraphonic-arcade-ui-6-229503.mp3" id="5_myumb"]
 
 [node name="Reload_Upgrade" type="TextureButton"]
 custom_minimum_size = Vector2(200, 260)
@@ -37,5 +38,9 @@ offset_right = 94.0
 theme_override_fonts/font = ExtResource("4_1a81d")
 theme_override_font_sizes/font_size = 19
 text = "Lower reload time"
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_myumb")
+pitch_scale = 1.5
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

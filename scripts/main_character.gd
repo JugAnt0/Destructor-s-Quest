@@ -1,4 +1,7 @@
 extends CharacterBody2D
+@onready var explosion_sound: AudioStreamPlayer2D = $explosion_sound
+
+@onready var sound: AudioStreamPlayer2D = $shooting_sound
 
 @onready var MainCharacter: CharacterBody2D = $"."
 @onready var ex: GPUParticles2D = $bullet_explosion
@@ -16,7 +19,7 @@ var can_shoot = true
 func take_damage(amount, from_position: Vector2):
 	if invincible:
 		return
-
+	explosion_sound.play()
 	Stats.vida -= amount
 	invincible = true
 
@@ -44,12 +47,12 @@ func start_invincibility():
 func shoot():
 	if !can_shoot:
 		return
-		
+	
 	can_shoot = false
 	
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
-
+	sound.play()
 	var dir = (get_global_mouse_position() - global_position).normalized()
 
 	bullet.global_position = global_position + dir * 20
@@ -80,6 +83,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if Input.is_action_pressed("left_click"):
+		
 		shoot()
 		
 		

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdvbjojo8do5o"]
 
 [ext_resource type="Script" uid="uid://dc6l8xctn7vav" path="res://scripts/hearts.gd" id="1_14ev0"]
-[ext_resource type="Texture2D" uid="uid://c24ry4rap560p" path="res://images/sprites/heartcontainer.png" id="2_hugpe"]
+[ext_resource type="Texture2D" uid="uid://c24ry4rap560p" path="res://assets/sprites/heartcontainer.png" id="2_hugpe"]
 [ext_resource type="PackedScene" uid="uid://dmbqofitvxpv1" path="res://scenes/heart_explosion.tscn" id="3_hugpe"]
 
 [node name="Hearts" type="Node"]

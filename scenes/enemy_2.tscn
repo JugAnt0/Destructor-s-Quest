@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dykr76whgup0b"]
+[gd_scene load_steps=13 format=3 uid="uid://dykr76whgup0b"]
 
 [ext_resource type="Script" uid="uid://xd6w2h5xosuu" path="res://scripts/enemy_2.gd" id="1_oh86k"]
-[ext_resource type="Texture2D" uid="uid://cu8sl0vd27h2k" path="res://images/sprites/nave_3.png" id="2_a4ywr"]
-[ext_resource type="Texture2D" uid="uid://wykkwcd65sjj" path="res://images/sprites/fire_motor_enemy_2-Sheet.png" id="3_a4ywr"]
+[ext_resource type="Texture2D" uid="uid://cu8sl0vd27h2k" path="res://assets/sprites/nave_3.png" id="2_a4ywr"]
+[ext_resource type="Texture2D" uid="uid://wykkwcd65sjj" path="res://assets/sprites/fire_motor_enemy_2-Sheet.png" id="3_a4ywr"]
 [ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_k4auq"]
+[ext_resource type="AudioStream" uid="uid://b571ddh0a8ve5" path="res://assets/sounds/freesound_community-explosion-36210.mp3" id="5_k4auq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4auq"]
 atlas = ExtResource("3_a4ywr")
@@ -45,6 +46,10 @@ animations = [{
 radius = 6.0
 height = 24.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4auq"]
+radius = 5.0
+height = 22.0
+
 [node name="enemy_2" type="Area2D" groups=["enemy", "personajes"]]
 collision_layer = 3
 collision_mask = 3
@@ -63,5 +68,15 @@ shape = SubResource("CapsuleShape2D_fdqbe")
 
 [node name="bullet_explosion" parent="." instance=ExtResource("3_k4auq")]
 position = Vector2(0, -10)
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k4auq")
+volume_db = 5.0
+pitch_scale = 3.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_k4auq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

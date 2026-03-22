@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3j1oy0ltsnmo"]
+[gd_scene load_steps=6 format=3 uid="uid://b3j1oy0ltsnmo"]
 
-[ext_resource type="Texture2D" uid="uid://rj8cla51m6j3" path="res://images/sprites/piercing_upgrade.png" id="1_utpck"]
-[ext_resource type="Texture2D" uid="uid://cxl665teamtpj" path="res://images/sprites/piercing_upgrade_hover.png" id="2_v6evv"]
+[ext_resource type="Texture2D" uid="uid://rj8cla51m6j3" path="res://assets/sprites/piercing_upgrade.png" id="1_utpck"]
+[ext_resource type="Texture2D" uid="uid://cxl665teamtpj" path="res://assets/sprites/piercing_upgrade_hover.png" id="2_v6evv"]
 [ext_resource type="Script" uid="uid://dqunxqytykbs7" path="res://scripts/pierce_upgrade.gd" id="3_utpck"]
-[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_7pt00"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://assets/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_7pt00"]
+[ext_resource type="AudioStream" uid="uid://wsmcub3q5qo1" path="res://assets/sounds/floraphonic-arcade-ui-6-229503.mp3" id="5_v6evv"]
 
 [node name="Pierce_Upgrade" type="TextureButton"]
 custom_minimum_size = Vector2(200, 260)
@@ -37,5 +38,9 @@ offset_right = 159.0
 theme_override_fonts/font = ExtResource("4_7pt00")
 theme_override_font_sizes/font_size = 19
 text = "Pierce 1 more enemy "
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_v6evv")
+pitch_scale = 0.75
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cni3tlbo1cpwy"]
 
 [ext_resource type="Script" uid="uid://3wnkra64co17" path="res://scripts/starting_menu.gd" id="1_2fbfq"]
-[ext_resource type="Texture2D" uid="uid://3e72ed64551m" path="res://images/sprites/Go_Back.png" id="2_8gwij"]
-[ext_resource type="Texture2D" uid="uid://b4th0wvtwu38r" path="res://images/sprites/Go_Back_hover.png" id="3_mah5v"]
-[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="4_kyhnv"]
+[ext_resource type="Texture2D" uid="uid://3e72ed64551m" path="res://assets/sprites/Go_Back.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://b4th0wvtwu38r" path="res://assets/sprites/Go_Back_hover.png" id="3_mah5v"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="4_kyhnv"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_2fbfq")
@@ -86,24 +86,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Thanks For Playing!"
 
-[node name="Label5" type="Label" parent="."]
-offset_left = 19.0
-offset_top = 190.0
-offset_right = 365.0
-offset_bottom = 222.0
-scale = Vector2(0.3, 0.3)
-theme_override_font_sizes/font_size = 32
-text = "A game by Antonio CT"
-
 [node name="Label6" type="Label" parent="."]
 offset_left = 19.0
 offset_top = 190.0
-offset_right = 365.0
+offset_right = 377.0
 offset_bottom = 222.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "A game by Antonio C.T."
+text = "A game by Antonio C.T. (music done by fanchisanchez from Pixabay)"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 129.0
@@ -127,7 +118,7 @@ position = Vector2(104, 41)
 texture = ExtResource("4_kyhnv")
 
 [node name="SmallGalaxy4" type="Sprite2D" parent="."]
-position = Vector2(345, 181)
+position = Vector2(345, 172)
 texture = ExtResource("4_kyhnv")
 
 [node name="space" type="Label" parent="."]

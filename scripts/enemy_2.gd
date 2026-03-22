@@ -1,7 +1,8 @@
 extends Area2D
 
 @onready var icon: Sprite2D = $Icon
-
+@onready var explosion_sound: AudioStreamPlayer2D = $explosion_sound
+@onready var st: StaticBody2D = $StaticBody2D
 var knockback = Stats.knockback
 var player : CharacterBody2D
 var speed := 120.0
@@ -37,10 +38,12 @@ func _physics_process(delta):
 		icon.hide()
 		$CollisionShape2D.disabled = true
 		ex.restart()
+		st.queue_free()
 		await get_tree().create_timer(1.5).timeout
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
+	explosion_sound.play()
 	if body.is_in_group("player"):
 		body.take_damage(1, global_position)
 		knockback = (global_position - body.global_position).normalized() * 250

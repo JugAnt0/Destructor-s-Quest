@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2c2l3xym41jj"]
 
 [ext_resource type="Script" uid="uid://bvs6c44c35rud" path="res://scripts/enemy_bullet.gd" id="1_qx7rs"]
-[ext_resource type="Texture2D" uid="uid://c6livark4jwvx" path="res://images/sprites/red_bullet.png" id="2_qx7rs"]
+[ext_resource type="Texture2D" uid="uid://c6livark4jwvx" path="res://assets/sprites/red_bullet.png" id="2_qx7rs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ckxic"]
 radius = 2.0

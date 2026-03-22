@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwcnlpwwb4ot"]
 
 [ext_resource type="Script" uid="uid://crpohtyd4y45k" path="res://scripts/warning_sign.gd" id="1_ypg5m"]
-[ext_resource type="Texture2D" uid="uid://becvmrows7x5g" path="res://images/sprites/danger.png" id="2_mln47"]
+[ext_resource type="Texture2D" uid="uid://becvmrows7x5g" path="res://assets/sprites/danger.png" id="2_mln47"]
 
 [node name="warning_sign" type="Control"]
 layout_mode = 3

@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bniicox5ga132"]
+[gd_scene load_steps=13 format=3 uid="uid://bniicox5ga132"]
 
 [ext_resource type="Script" uid="uid://bwfgqe8h4qxs6" path="res://scripts/main_character.gd" id="1_ig48j"]
-[ext_resource type="Texture2D" uid="uid://dbwdgwiqey45g" path="res://images/sprites/nave_1.png" id="2_ig48j"]
+[ext_resource type="Texture2D" uid="uid://dbwdgwiqey45g" path="res://assets/sprites/nave_1.png" id="2_ig48j"]
 [ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_tqm6u"]
-[ext_resource type="Texture2D" uid="uid://cyiysb2fh7pq5" path="res://images/sprites/fire_motors.png" id="4_e6tc2"]
+[ext_resource type="Texture2D" uid="uid://cyiysb2fh7pq5" path="res://assets/sprites/fire_motors.png" id="4_e6tc2"]
+[ext_resource type="AudioStream" uid="uid://du1d4ahpjef43" path="res://assets/sounds/freesound_community-zap_c_07-82067.mp3" id="5_k0aba"]
+[ext_resource type="AudioStream" uid="uid://b571ddh0a8ve5" path="res://assets/sounds/freesound_community-explosion-36210.mp3" id="6_ogw1n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6tc2"]
 radius = 11.0
@@ -61,3 +63,11 @@ position = Vector2(0, 14)
 sprite_frames = SubResource("SpriteFrames_d3a2h")
 autoplay = "default"
 frame_progress = 0.83866423
+
+[node name="shooting_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k0aba")
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ogw1n")
+volume_db = 5.0
+pitch_scale = 0.5

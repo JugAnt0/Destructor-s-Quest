@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chm67bg6bdypm"]
+[gd_scene load_steps=6 format=3 uid="uid://chm67bg6bdypm"]
 
 [ext_resource type="Script" uid="uid://dgiwxaq3oqh1n" path="res://scripts/max_life_upgrade.gd" id="1_8e36l"]
-[ext_resource type="Texture2D" uid="uid://e70j83gm8han" path="res://images/sprites/max_health_upgrade.png" id="1_xnfc3"]
-[ext_resource type="Texture2D" uid="uid://6k3ma2uri5tx" path="res://images/sprites/max_health_upgrade_hover.png" id="2_dsb6v"]
-[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_yleto"]
+[ext_resource type="Texture2D" uid="uid://e70j83gm8han" path="res://assets/sprites/max_health_upgrade.png" id="1_xnfc3"]
+[ext_resource type="Texture2D" uid="uid://6k3ma2uri5tx" path="res://assets/sprites/max_health_upgrade_hover.png" id="2_dsb6v"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://assets/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_yleto"]
+[ext_resource type="AudioStream" uid="uid://wsmcub3q5qo1" path="res://assets/sounds/floraphonic-arcade-ui-6-229503.mp3" id="5_xnfc3"]
 
 [node name="Max_life_Upgrade" type="TextureButton"]
 custom_minimum_size = Vector2(200, 260)
@@ -39,5 +40,9 @@ offset_bottom = -3.0
 theme_override_fonts/font = ExtResource("4_yleto")
 theme_override_font_sizes/font_size = 19
 text = "Increase max health "
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xnfc3")
+pitch_scale = 1.25
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

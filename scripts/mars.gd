@@ -1,4 +1,6 @@
 extends Area2D
+@onready var ex: GPUParticles2D = $mars_explosion
+@onready var explosion_sound: AudioStreamPlayer2D = $explosion_sound
 
 @onready var icon: Sprite2D = $Icon
 @onready var progress_bar: ProgressBar = $ProgressBar
@@ -40,14 +42,15 @@ func _physics_process(_delta):
 		emit_signal("died")
 
 func _on_body_entered(body: Node2D) -> void:
+	explosion_sound.play()
 	if body.is_in_group("player"):
 		body.take_damage(1, global_position)		
 	if body.is_in_group("player_bullet"):
-		body.pierce -= 1
+		ex.restart()
+		body.queue_free()
 		
 		
-		if body.pierce < 0:
-			body.queue_free()
+		
 
 		health -= Stats.daño
 		icon.modulate =  Color8(253, 0, 49, 255)

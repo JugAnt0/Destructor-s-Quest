@@ -7,13 +7,13 @@ func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
 	Limits.left_limit = -1000
-	LevelManager.set_next_level("res://scenes/starting_menu.tscn")
+	LevelManager.set_next_level("res://scenes/credits.tscn")
 	mars.died.connect(_on_mars_died)
-	
+	BackgroundMusic.play_boss()
 	
 func _on_mars_died():
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
-
+	BackgroundMusic.play_normal()
 func _process(_delta: float) -> void:
 	
 	# Detect when player loses health

@@ -5,6 +5,7 @@ var last_health = Stats.vida
 func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
+	Limits.left_limit = 0
 	LevelManager.set_next_level("res://scenes/level_2.tscn")
 	Stats.max_vida = 5
 	Stats.vida = 5

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://c70xn6xecbfos"]
 
 [ext_resource type="Script" uid="uid://d2twrp1ekvjr4" path="res://scripts/level_9.gd" id="1_wicpl"]
-[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="2_8xf63"]
-[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://images/sprites/star_4.png" id="3_chmw8"]
-[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://images/sprites/star_3.png" id="4_pnq0c"]
-[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://images/sprites/star_2.png" id="5_ltn3h"]
-[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://images/sprites/star_1.png" id="6_htoop"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_8xf63"]
+[ext_resource type="Texture2D" uid="uid://6lo7h3w814r1" path="res://assets/sprites/star_4.png" id="3_chmw8"]
+[ext_resource type="Texture2D" uid="uid://bm7baieufxgu" path="res://assets/sprites/star_3.png" id="4_pnq0c"]
+[ext_resource type="Texture2D" uid="uid://bkuilrfxn6aib" path="res://assets/sprites/star_2.png" id="5_ltn3h"]
+[ext_resource type="Texture2D" uid="uid://bv76v52fll6xe" path="res://assets/sprites/star_1.png" id="6_htoop"]
 [ext_resource type="PackedScene" uid="uid://bniicox5ga132" path="res://scenes/main_character.tscn" id="7_ux05n"]
 [ext_resource type="PackedScene" uid="uid://dk2pbawxkrac5" path="res://scenes/enemy_3.tscn" id="8_uytnm"]
 [ext_resource type="PackedScene" uid="uid://bjrrx1uiau4uw" path="res://scenes/enemy_4.tscn" id="9_ds8vu"]
@@ -27,7 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gee14"]
 resource_name = "move_map"
-length = 30.0
+length = 90.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,10 +35,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 29.466667),
+"times": PackedFloat32Array(0, 90),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(75, 65)]
+"values": [Vector2(0, 0), Vector2(90, 90)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]

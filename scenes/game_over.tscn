@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://deu2e73mqwb2a"]
 
 [ext_resource type="Script" uid="uid://cpap42tnch6gp" path="res://scripts/game_over.gd" id="1_7m3ot"]
-[ext_resource type="Texture2D" uid="uid://cacoj22pi6mp6" path="res://images/sprites/Exit1.png" id="1_racf3"]
-[ext_resource type="Texture2D" uid="uid://df2oe1st5v1rx" path="res://images/sprites/Exit2.png" id="2_7m3ot"]
-[ext_resource type="Texture2D" uid="uid://dt0m8vvdhb8nf" path="res://images/sprites/Retry.png" id="3_v3hpu"]
-[ext_resource type="Texture2D" uid="uid://dm8et8206lu8m" path="res://images/sprites/Retry_hover.png" id="4_irg28"]
+[ext_resource type="Texture2D" uid="uid://cacoj22pi6mp6" path="res://assets/sprites/Exit1.png" id="1_racf3"]
+[ext_resource type="Texture2D" uid="uid://df2oe1st5v1rx" path="res://assets/sprites/Exit2.png" id="2_7m3ot"]
+[ext_resource type="Texture2D" uid="uid://dt0m8vvdhb8nf" path="res://assets/sprites/Retry.png" id="3_v3hpu"]
+[ext_resource type="Texture2D" uid="uid://dm8et8206lu8m" path="res://assets/sprites/Retry_hover.png" id="4_irg28"]
 
 [node name="Game_Over" type="Node2D"]
 script = ExtResource("1_7m3ot")
@@ -83,6 +83,24 @@ offset_bottom = 123.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("3_v3hpu")
 texture_hover = ExtResource("4_irg28")
+
+[node name="space" type="Label" parent="."]
+visible = false
+offset_left = 178.0
+offset_top = 143.0
+offset_right = 232.0
+offset_bottom = 159.0
+scale = Vector2(0.5, 0.5)
+text = "SPACE"
+
+[node name="esc" type="Label" parent="."]
+visible = false
+offset_left = 183.0
+offset_top = 186.0
+offset_right = 237.0
+offset_bottom = 202.0
+scale = Vector2(0.5, 0.5)
+text = "Esc"
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

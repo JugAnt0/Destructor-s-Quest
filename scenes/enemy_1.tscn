@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv045l0on8wsq"]
+[gd_scene load_steps=13 format=3 uid="uid://dv045l0on8wsq"]
 
 [ext_resource type="Script" uid="uid://ce8y6a4hn87bp" path="res://scripts/enemy_1.gd" id="1_a1412"]
-[ext_resource type="Texture2D" uid="uid://bpsqqeaf2anp4" path="res://images/sprites/nave_2.png" id="2_a1412"]
+[ext_resource type="Texture2D" uid="uid://bpsqqeaf2anp4" path="res://assets/sprites/nave_2.png" id="2_a1412"]
 [ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_ejytf"]
-[ext_resource type="Texture2D" uid="uid://boufw6qi5oxac" path="res://images/sprites/fire_motors_enemy_1.png" id="4_dq62l"]
+[ext_resource type="Texture2D" uid="uid://boufw6qi5oxac" path="res://assets/sprites/fire_motors_enemy_1.png" id="4_dq62l"]
+[ext_resource type="AudioStream" uid="uid://fin5g0dx0j27" path="res://assets/sounds/freesound_community-snare-space-shot-80932.mp3" id="5_d3026"]
+[ext_resource type="AudioStream" uid="uid://b571ddh0a8ve5" path="res://assets/sounds/freesound_community-explosion-36210.mp3" id="6_l21ug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3026"]
 atlas = ExtResource("4_dq62l")
@@ -66,6 +68,18 @@ wait_time = 2.3
 
 [node name="bullet_explosion" parent="." instance=ExtResource("3_ejytf")]
 position = Vector2(0, -9)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_d3026")
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_l21ug")
+volume_db = 5.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_dq62l")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

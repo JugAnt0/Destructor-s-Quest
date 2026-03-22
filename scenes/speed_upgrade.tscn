@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c10otfcrwjka4"]
+[gd_scene load_steps=6 format=3 uid="uid://c10otfcrwjka4"]
 
-[ext_resource type="Texture2D" uid="uid://dl6pda1w3u5xt" path="res://images/sprites/speed_upgrade.png" id="1_bwqv0"]
-[ext_resource type="Texture2D" uid="uid://ckui8tlftkj6p" path="res://images/sprites/speed_upgrade_hover.png" id="2_a0bbt"]
+[ext_resource type="Texture2D" uid="uid://dl6pda1w3u5xt" path="res://assets/sprites/speed_upgrade.png" id="1_bwqv0"]
+[ext_resource type="Texture2D" uid="uid://ckui8tlftkj6p" path="res://assets/sprites/speed_upgrade_hover.png" id="2_a0bbt"]
 [ext_resource type="Script" uid="uid://c5wwytrj80in6" path="res://scripts/speed_upgrade.gd" id="3_ti47w"]
-[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://images/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_42etq"]
+[ext_resource type="FontFile" uid="uid://trx7ihge14hi" path="res://assets/sprites/Jersey_10/Jersey10-Regular.ttf" id="4_42etq"]
+[ext_resource type="AudioStream" uid="uid://wsmcub3q5qo1" path="res://assets/sounds/floraphonic-arcade-ui-6-229503.mp3" id="5_a0bbt"]
 
 [node name="Speed_Upgrade" type="TextureButton"]
 custom_minimum_size = Vector2(200, 260)
@@ -38,5 +39,8 @@ offset_bottom = 1.0
 theme_override_fonts/font = ExtResource("4_42etq")
 theme_override_font_sizes/font_size = 19
 text = "Increase Movement Speed"
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_a0bbt")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

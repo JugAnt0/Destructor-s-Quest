@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpikhcgee8jmo"]
 
 [ext_resource type="Script" uid="uid://ccv6adgrrlc0k" path="res://scripts/knocky_bullet.gd" id="1_qawxl"]
-[ext_resource type="Texture2D" uid="uid://8g6h5er2j8jd" path="res://images/sprites/green_bullet.png" id="2_qsucv"]
+[ext_resource type="Texture2D" uid="uid://8g6h5er2j8jd" path="res://assets/sprites/green_bullet.png" id="2_qsucv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ckxic"]
 radius = 2.0
