@@ -29,4 +29,5 @@ var player_knockback = 75
 
 func _process(_delta: float) -> void:
 	if vida <=0:
+		Hearts.heart_1.hide()
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")

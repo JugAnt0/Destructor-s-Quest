@@ -1,42 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvp165ym5ef8l"]
+[gd_scene load_steps=5 format=3 uid="uid://dvp165ym5ef8l"]
 
 [ext_resource type="Script" uid="uid://3wnkra64co17" path="res://scripts/starting_menu.gd" id="1_cxv6e"]
 [ext_resource type="Texture2D" uid="uid://cxd8t4b718hab" path="res://images/sprites/StartButton2.png" id="2_kp2u6"]
 [ext_resource type="Texture2D" uid="uid://cl00qmun7pvo8" path="res://images/sprites/StartButton1.png" id="3_6gt2g"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="4_6gt2g"]
 
 [node name="Starting menu" type="Node2D"]
 script = ExtResource("1_cxv6e")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(193, 108)
+zoom = Vector2(3, 3)
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -31.0
-offset_top = -11.0
-offset_right = 1161.0
-offset_bottom = 666.0
-color = Color(0.47058824, 0.7137255, 1, 1)
+offset_right = 385.0
+offset_bottom = 218.0
+color = Color(0.24964225, 0.38980585, 0.81198764, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -22.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 228.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = -9.0
+offset_right = 427.0
+offset_bottom = 216.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -17.0
+offset_right = 396.0
+offset_bottom = 13.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 200.0
+offset_right = 398.0
+offset_bottom = 230.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 198.0
-offset_top = 131.0
-offset_right = 958.0
-offset_bottom = 195.0
+offset_left = 51.0
+offset_top = 64.0
+offset_right = 341.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 32
+text = "Destructor's Quest"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 65.0
+offset_right = 342.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "DESTRUCTOR'S QUEST"
+theme_override_font_sizes/font_size = 32
+text = "Destructor's Quest"
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 378.0
-offset_top = 290.0
-offset_right = 442.0
-offset_bottom = 306.0
-scale = Vector2(6, 6)
+offset_left = 132.0
+offset_top = 110.0
+offset_right = 196.0
+offset_bottom = 126.0
+scale = Vector2(2, 2)
 texture_normal = ExtResource("2_kp2u6")
 texture_hover = ExtResource("3_6gt2g")
 
+[node name="SmallGalaxy1" type="Sprite2D" parent="."]
+position = Vector2(72, 170)
+texture = ExtResource("4_6gt2g")
+
+[node name="SmallGalaxy2" type="Sprite2D" parent="."]
+position = Vector2(262, 112)
+texture = ExtResource("4_6gt2g")
+
+[node name="SmallGalaxy3" type="Sprite2D" parent="."]
+position = Vector2(123, 34)
+texture = ExtResource("4_6gt2g")
+
+[node name="SmallGalaxy4" type="Sprite2D" parent="."]
+position = Vector2(345, 181)
+texture = ExtResource("4_6gt2g")
+
 [node name="space" type="Label" parent="."]
-visible = false
-offset_left = 500.0
-offset_top = 376.0
-offset_right = 554.0
-offset_bottom = 392.0
-scale = Vector2(2, 2)
+offset_left = 178.0
+offset_top = 135.0
+offset_right = 232.0
+offset_bottom = 151.0
+scale = Vector2(0.5, 0.5)
 text = "SPACE"

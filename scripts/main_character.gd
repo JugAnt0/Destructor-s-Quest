@@ -5,18 +5,41 @@ extends CharacterBody2D
 @onready var icon: Sprite2D = $Icon
 @onready var fire_motors: AnimatedSprite2D = $FireMotors
 var knockback_to_self = Vector2.ZERO
-
+var invincible = false
+var invincibility_time = 1.0
 var velocidad = Stats.velocidad
-
 var last_health := 5
-
 var bullet_scene = preload("res://scenes/bullet.tscn")
-
 var player : CharacterBody2D
-
-
 var can_shoot = true
 
+func take_damage(amount, from_position: Vector2):
+	if invincible:
+		return
+
+	Stats.vida -= amount
+	invincible = true
+
+	# 💥 explosion + feedback
+	ex.restart()
+	icon.modulate = Color8(253, 0, 49, 255)
+
+	# 💨 knockback (feels really good)
+	var dir = (global_position - from_position).normalized()
+	knockback_to_self += dir * 100
+
+	start_invincibility()
+
+func start_invincibility():
+	for i in range(6):
+		icon.modulate.a = 0.3
+		await get_tree().create_timer(0.1).timeout
+		icon.modulate.a = 1.0
+		await get_tree().create_timer(0.1).timeout
+
+	icon.modulate = Color8(255, 255, 255, 255)
+	invincible = false
+	
 
 func shoot():
 	if !can_shoot:
@@ -50,13 +73,7 @@ func _physics_process(delta):
 		fire_motors.hide()
 	else:
 		fire_motors.show()
-	if Stats.vida < last_health:
-		
-		ex.restart()   
-		icon.modulate =  Color8(253, 0, 49, 255)
-		await get_tree().create_timer(0.1).timeout
-		icon.modulate =  Color8(255, 255, 255, 255)
-		
+	
 	last_health = Stats.vida
 	
 	

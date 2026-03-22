@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgro4cidhr432"]
 
-[ext_resource type="Script" uid="uid://bvs6c44c35rud" path="res://scripts/enemy_bullet.gd" id="1_brnbb"]
+[ext_resource type="Script" uid="uid://dci4j06snh6by" path="res://scripts/purp_bullet.gd" id="1_brnbb"]
 [ext_resource type="Texture2D" uid="uid://cnqdj8k5k10fn" path="res://images/sprites/purple_bullet.png" id="2_omr42"]
 
 [sub_resource type="Gradient" id="Gradient_qx7rs"]

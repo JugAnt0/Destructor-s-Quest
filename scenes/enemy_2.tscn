@@ -1,8 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://dykr76whgup0b"]
+[gd_scene load_steps=11 format=3 uid="uid://dykr76whgup0b"]
 
 [ext_resource type="Script" uid="uid://xd6w2h5xosuu" path="res://scripts/enemy_2.gd" id="1_oh86k"]
 [ext_resource type="Texture2D" uid="uid://cu8sl0vd27h2k" path="res://images/sprites/nave_3.png" id="2_a4ywr"]
+[ext_resource type="Texture2D" uid="uid://wykkwcd65sjj" path="res://images/sprites/fire_motor_enemy_2-Sheet.png" id="3_a4ywr"]
 [ext_resource type="PackedScene" uid="uid://cpmbioe4drmn6" path="res://scenes/bullet_explosion.tscn" id="3_k4auq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4auq"]
+atlas = ExtResource("3_a4ywr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdqbe"]
+atlas = ExtResource("3_a4ywr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2yeo"]
+atlas = ExtResource("3_a4ywr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvrhm"]
+atlas = ExtResource("3_a4ywr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxmbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4auq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdqbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2yeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvrhm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdqbe"]
 radius = 6.0
@@ -15,6 +52,11 @@ script = ExtResource("1_oh86k")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_a4ywr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icon"]
+sprite_frames = SubResource("SpriteFrames_lxmbh")
+autoplay = "default"
+frame_progress = 0.8458087
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fdqbe")

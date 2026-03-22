@@ -14,6 +14,6 @@ func set_next_level(path : String):
 func go_to_next_level():
 	if next_level != "":
 		load_level(next_level)
-
+		
 func load_upgrade():
 	get_tree().change_scene_to_file("res://scenes/upgrades.tscn")

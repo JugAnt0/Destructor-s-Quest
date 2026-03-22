@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var knockback = Vector2.ZERO
-var speed = 100
+
+var speed = 200
 var direction = Vector2.ZERO
 
 func _physics_process(delta):
@@ -13,6 +13,5 @@ func _physics_process(delta):
 		var body = collision.get_collider()
 
 		if body.is_in_group("player"):
-			body.knockback_to_self = (body.global_position - global_position).normalized() * 150
 			body.take_damage(1, global_position)
 		queue_free()

@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://cni3tlbo1cpwy"]
+
+[ext_resource type="Script" uid="uid://3wnkra64co17" path="res://scripts/starting_menu.gd" id="1_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://3e72ed64551m" path="res://images/sprites/Go_Back.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://b4th0wvtwu38r" path="res://images/sprites/Go_Back_hover.png" id="3_mah5v"]
+[ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://images/sprites/small_galaxy_1.png" id="4_kyhnv"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_2fbfq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(193, 108)
+zoom = Vector2(3, 3)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 378.0
+offset_bottom = 221.0
+color = Color(0.11069328, 0.41680387, 0.15252843, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -22.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 228.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = -9.0
+offset_right = 427.0
+offset_bottom = 216.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -17.0
+offset_right = 396.0
+offset_bottom = 13.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 200.0
+offset_right = 398.0
+offset_bottom = 230.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 62.0
+offset_right = 354.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 32
+text = "QUEST COMPLETED!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 63.0
+offset_right = 355.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "QUEST COMPLETED!"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 151.0
+offset_right = 448.0
+offset_bottom = 183.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 32
+text = "Thanks For Playing!"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 150.0
+offset_right = 448.0
+offset_bottom = 182.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Thanks For Playing!"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 190.0
+offset_right = 365.0
+offset_bottom = 222.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "A game by Antonio CT"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 190.0
+offset_right = 365.0
+offset_bottom = 222.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "A game by Antonio C.T."
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 129.0
+offset_top = 111.0
+offset_right = 193.0
+offset_bottom = 127.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_8gwij")
+texture_hover = ExtResource("3_mah5v")
+
+[node name="SmallGalaxy1" type="Sprite2D" parent="."]
+position = Vector2(52, 136)
+texture = ExtResource("4_kyhnv")
+
+[node name="SmallGalaxy6" type="Sprite2D" parent="."]
+position = Vector2(355, 30)
+texture = ExtResource("4_kyhnv")
+
+[node name="SmallGalaxy3" type="Sprite2D" parent="."]
+position = Vector2(104, 41)
+texture = ExtResource("4_kyhnv")
+
+[node name="SmallGalaxy4" type="Sprite2D" parent="."]
+position = Vector2(345, 181)
+texture = ExtResource("4_kyhnv")
+
+[node name="space" type="Label" parent="."]
+visible = false
+offset_left = 178.0
+offset_top = 135.0
+offset_right = 232.0
+offset_bottom = 151.0
+scale = Vector2(0.5, 0.5)
+text = "SPACE"

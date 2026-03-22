@@ -1,24 +1,18 @@
 extends Node2D
+@onready var mars: Area2D = $Mars
 
 var last_health = Stats.vida
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
-	LevelManager.set_next_level("res://scenes/level_2.tscn")
-	Stats.max_vida = 5
-	Stats.vida = 5
-	Stats.daño = 1
-	Stats.velocidad = 100.0
-	Stats.reload_speed = 1
-	Stats.propulsion_distance = 20
-	Stats.propulsion_reload_time = 2
-	Stats.piercing = 0
-	Stats.bullets_per_shot = 1
-	Stats.alcance = 100
-	Stats.knockback = Vector2.ZERO
-	Stats.player_knockback = 75
-
+	Limits.left_limit = -1000
+	LevelManager.set_next_level("res://scenes/starting_menu.tscn")
+	mars.died.connect(_on_mars_died)
+	
+	
+func _on_mars_died():
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 
 func _process(_delta: float) -> void:
 	
@@ -31,11 +25,25 @@ func _process(_delta: float) -> void:
 
 	# Save current health
 	last_health = Stats.vida
-	if get_tree().get_nodes_in_group("enemy").size() <= 0:
-		LevelManager.load_upgrade()
+	
 
 func play_explosion(heart_index):
 	match heart_index:
+		10:
+			Hearts.hert_explosion10.show()
+			Hearts.hert_explosion10.restart()
+		9:
+			Hearts.hert_explosion9.show()
+			Hearts.hert_explosion9.restart()
+		8:
+			Hearts.hert_explosion8.show()
+			Hearts.hert_explosion8.restart()
+		7:
+			Hearts.hert_explosion7.show()
+			Hearts.hert_explosion7.restart()
+		6:
+			Hearts.hert_explosion6.show()
+			Hearts.hert_explosion6.restart()
 		5:
 			Hearts.hert_explosion5.show()
 			Hearts.hert_explosion5.restart()
@@ -59,7 +67,8 @@ func update_hearts():
 	Hearts.heart_3.visible = Stats.vida >= 3
 	Hearts.heart_4.visible = Stats.vida >= 4
 	Hearts.heart_5.visible = Stats.vida >= 5
-		
-		
-		
-		
+	Hearts.heart_6.visible = Stats.vida >= 6
+	Hearts.heart_7.visible = Stats.vida >= 7
+	Hearts.heart_8.visible = Stats.vida >= 8
+	Hearts.heart_9.visible = Stats.vida >= 9
+	Hearts.heart_10.visible = Stats.vida >= 10

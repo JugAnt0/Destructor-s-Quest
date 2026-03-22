@@ -33,6 +33,7 @@ player=""
 player_bullet=""
 enemy=""
 ui=""
+boss=""
 
 [gui]
 

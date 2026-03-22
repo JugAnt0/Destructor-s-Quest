@@ -72,7 +72,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		Stats.vida -= 1
+		body.take_damage(1, global_position)
 		knockback = (global_position - body.global_position).normalized() * 150
 	if body.is_in_group("player_bullet"):
 		body.pierce -= 1
