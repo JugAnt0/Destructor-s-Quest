@@ -33,7 +33,7 @@ func _exit_tree():
 		
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
-	var canvas = get_tree().get_first_node_in_group("ui") # we'll set this
+	
 
 	
 	

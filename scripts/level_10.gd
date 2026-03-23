@@ -1,20 +1,12 @@
 extends Node2D
 @onready var mars: Area2D = $Mars
 @onready var start: AnimationPlayer = $Mars/start
-@onready var timer: Timer = $Timer
-@onready var limit: StaticBody2D = $limit
+
 
 var bossman : Area2D
 var last_health = Stats.vida
 # Called when the node enters the scene tree for the first time.
 
-func start_phase_2():
-	bossman.invincible = true
-	start.play("move_out")
-	limit.queue_free()
-	await start.animation_finished
-
-	bossman.invincible = false
 	
 func _ready() -> void:
 	Limits.down_limit = 217
@@ -30,11 +22,14 @@ func _on_mars_died():
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 	BackgroundMusic.play_normal()
 	
-	
+
 func _process(_delta: float) -> void:
-	if bossman.health <= 50 and !bossman.phase_2_triggered:
+	if bossman.health <= 120 and !bossman.phase_2_triggered:
 		bossman.phase_2_triggered = true
-		start_phase_2()
+		start.play("move_out")
+		await get_tree().create_timer(30).timeout
+		start.play("move_in")
+		bossman.health = 150
 		
 	# Detect when player loses health
 	if Stats.vida < last_health:
@@ -92,3 +87,12 @@ func update_hearts():
 	Hearts.heart_8.visible = Stats.vida >= 8
 	Hearts.heart_9.visible = Stats.vida >= 9
 	Hearts.heart_10.visible = Stats.vida >= 10
+
+func _on_bullet_limit_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+
+
+func _on_bullet_limit_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()

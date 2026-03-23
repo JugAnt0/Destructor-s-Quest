@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5tspfrrotevg"]
+[gd_scene load_steps=23 format=3 uid="uid://c5tspfrrotevg"]
 
 [ext_resource type="Script" uid="uid://cdu8exdloauor" path="res://scripts/level_10.gd" id="1_yxmu7"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_7d08f"]
@@ -83,7 +83,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bg236"]
 resource_name = "move_out"
-length = 19.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -91,10 +91,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.0333333, 5.6539807, 6.366667, 14.1031885, 16.033333, 17.724277, 18.994835),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.0333333, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(386, 118), Vector2(444, 118), Vector2(591, 118), Vector2(727.08936, 504), Vector2(-271, 432), Vector2(-191, 118), Vector2(-87, 118), Vector2(-27, 118)]
+"values": [Vector2(386, 118), Vector2(444, 118), Vector2(614, 111)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7d08f"]
@@ -106,6 +106,12 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg236"]
 size = Vector2(20, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upujw"]
+size = Vector2(23, 1055)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa4c8"]
+size = Vector2(20, 407)
 
 [node name="level_10" type="Node2D"]
 script = ExtResource("1_yxmu7")
@@ -1539,294 +1545,498 @@ position = Vector2(1665, -17)
 position = Vector2(1666.0001, 148)
 rotation = -2.198489
 
+[node name="enemy_113" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(7253, -7)
+
+[node name="enemy_114" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(7377, 133)
+
+[node name="enemy_115" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(8651, -196)
+
+[node name="enemy_116" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(8701, 187)
+
+[node name="enemy_117" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(9021, -42)
+
+[node name="enemy_118" parent="Node2D" instance=ExtResource("9_g7gpa")]
+position = Vector2(9021, 39)
+
+[node name="enemy_119" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7045, 108)
+
+[node name="enemy_120" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7120, 70)
+
+[node name="enemy_121" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8222, -72)
+
+[node name="enemy_122" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8220, -11)
+
+[node name="enemy_123" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8217, 177)
+
+[node name="enemy_124" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8220, 235)
+
+[node name="enemy_125" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7137, -474)
+
+[node name="enemy_126" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7184, 722)
+
+[node name="enemy_127" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7536, 224)
+
+[node name="enemy_128" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7539, 26)
+
+[node name="enemy_129" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(7547, -151)
+
+[node name="enemy_130" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8445, -141)
+
+[node name="enemy_131" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8447, 346)
+
+[node name="enemy_132" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(8441, 76)
+
+[node name="enemy_133" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(8535, -15)
+
+[node name="enemy_134" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(8565, 41)
+
+[node name="enemy_135" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(8134, -269)
+
+[node name="enemy_136" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(8127, 169)
+
+[node name="enemy_137" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7067, -337)
+
+[node name="enemy_138" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7097, -281)
+
+[node name="enemy_139" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7059, 376)
+
+[node name="enemy_140" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7089, 432)
+
+[node name="enemy_141" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9153, -23)
+
+[node name="enemy_142" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9183, 33)
+
+[node name="enemy_143" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(9596, 90)
+
+[node name="enemy_144" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10012, 244)
+
+[node name="enemy_145" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10015, 46)
+
+[node name="enemy_146" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10023, -131)
+
+[node name="enemy_147" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10921, -121)
+
+[node name="enemy_148" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10923, 366)
+
+[node name="enemy_149" parent="Node2D" instance=ExtResource("8_av7uw")]
+position = Vector2(10917, 96)
+
+[node name="enemy_150" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(11011, 5)
+
+[node name="enemy_151" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(11041, 61)
+
+[node name="enemy_152" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10610, -249)
+
+[node name="enemy_153" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10603, 189)
+
+[node name="enemy_154" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9543, -317)
+
+[node name="enemy_155" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9573, -261)
+
+[node name="enemy_156" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9535, 396)
+
+[node name="enemy_157" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(9565, 452)
+
+[node name="enemy_158" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(11629, -3)
+
+[node name="enemy_159" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(11659, 53)
+
+[node name="enemy_160" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10845, -679)
+
+[node name="enemy_161" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10875, -623)
+
+[node name="enemy_162" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10917, 825)
+
+[node name="enemy_163" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(10947, 881)
+
+[node name="enemy_164" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7466, -1534)
+
+[node name="enemy_165" parent="Node2D" instance=ExtResource("11_bg236")]
+position = Vector2(7502, 1552)
+
+[node name="enemy_166" parent="Node2D" instance=ExtResource("12_upujw")]
+position = Vector2(7429, 22)
+
+[node name="enemy_167" parent="Node2D" instance=ExtResource("12_upujw")]
+position = Vector2(7846, -62)
+
+[node name="enemy_168" parent="Node2D" instance=ExtResource("12_upujw")]
+position = Vector2(7847, 103)
+rotation = -2.198489
+
 [node name="enemy_57" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-4365.948, 20.682957)
+position = Vector2(-1612.4238, 175.42368)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_58" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-4489.131, -120.036835)
+position = Vector2(-1735.6064, 34.703888)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_59" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-5765.0264, 201.53784)
+position = Vector2(-3011.502, 356.27856)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_60" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-5812.794, -181.74686)
+position = Vector2(-3059.2695, -27.006134)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_61" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-6134.123, 45.385582)
+position = Vector2(-3380.5986, 200.12631)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_62" parent="Node2D" instance=ExtResource("9_g7gpa")]
-position = Vector2(-6133.6514, -35.61304)
+position = Vector2(-3380.127, 119.127686)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_63" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4157.283, -93.103714)
+position = Vector2(-1403.7588, 61.63701)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_64" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4232.503, -55.54115)
+position = Vector2(-1478.9785, 99.19957)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_65" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5335.3105, 80.03842)
+position = Vector2(-2581.7861, 234.77914)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_66" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5332.955, 19.05111)
+position = Vector2(-2579.4307, 173.79184)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_67" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5328.8613, -168.92822)
+position = Vector2(-2575.337, -14.1875)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_68" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5331.5225, -226.9447)
+position = Vector2(-2577.998, -72.20398)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_69" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4252.67, 488.3506)
+position = Vector2(-1499.1455, 643.0913)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_70" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4292.704, -707.90283)
+position = Vector2(-1539.1797, -553.1621)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_71" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4647.5986, -211.9613)
+position = Vector2(-1894.0742, -57.22058)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_72" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4651.752, -13.98214)
+position = Vector2(-1898.2275, 140.75858)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_73" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-4660.782, 162.96826)
+position = Vector2(-1907.2578, 317.70898)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_74" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5558.71, 147.73851)
+position = Vector2(-2805.1855, 302.47925)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_75" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5557.873, -339.26486)
+position = Vector2(-2804.3486, -184.52414)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_76" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-5553.4453, -69.23451)
+position = Vector2(-2799.921, 85.50621)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_77" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-5647.9736, 21.216494)
+position = Vector2(-2894.4492, 175.95721)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_78" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-5677.6465, -34.95728)
+position = Vector2(-2924.122, 119.78345)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_79" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-5248.46, 277.5476)
+position = Vector2(-2494.9355, 432.28833)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_80" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-5238.909, -160.4042)
+position = Vector2(-2485.3848, -5.6634827)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_81" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4181.874, 351.7606)
+position = Vector2(-1428.3496, 506.5013)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_82" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4211.547, 295.58685)
+position = Vector2(-1458.0225, 450.32758)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_83" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4169.7217, -361.1807)
+position = Vector2(-1416.1973, -206.43997)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_84" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4199.3945, -417.35443)
+position = Vector2(-1445.8701, -262.6137)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_85" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6266.01, 25.617146)
+position = Vector2(-3512.4854, 180.35786)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_86" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6295.683, -30.556622)
+position = Vector2(-3542.1587, 124.1841)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_87" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-6708.344, -89.96096)
+position = Vector2(-3954.8198, 64.77976)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_88" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-7123.4404, -246.3811)
+position = Vector2(-4369.916, -91.64038)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_89" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-7127.5933, -48.401943)
+position = Vector2(-4374.069, 106.338776)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_90" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-7136.624, 128.54846)
+position = Vector2(-4383.0996, 283.28918)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_91" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-8034.5503, 113.3187)
+position = Vector2(-5281.026, 268.05942)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_92" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-8033.7144, -373.68466)
+position = Vector2(-5280.19, -218.94394)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_93" parent="Node2D" instance=ExtResource("8_av7uw")]
-position = Vector2(-8029.2866, -103.65431)
+position = Vector2(-5275.762, 51.08641)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_94" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8123.8154, -13.203312)
+position = Vector2(-5370.291, 141.53741)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_95" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8153.489, -69.37708)
+position = Vector2(-5399.9644, 85.36364)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_96" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-7724.3013, 243.12778)
+position = Vector2(-4970.777, 397.8685)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_97" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-7714.7505, -194.824)
+position = Vector2(-4961.226, -40.083282)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_98" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6657.7153, 317.34082)
+position = Vector2(-3904.191, 472.08154)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_99" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6687.3887, 261.16705)
+position = Vector2(-3933.8643, 415.90778)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_100" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6645.563, -395.60052)
+position = Vector2(-3892.0386, -240.8598)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_101" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-6675.2363, -451.77426)
+position = Vector2(-3921.712, -297.03354)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_102" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8741.852, -8.802666)
+position = Vector2(-5988.327, 145.93805)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_103" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8771.524, -64.97643)
+position = Vector2(-6018, 89.76429)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_104" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-7961.802, 671.7519)
+position = Vector2(-5208.2773, 826.4926)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_105" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-7991.475, 615.57806)
+position = Vector2(-5237.9507, 770.3188)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_106" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8025.041, -832.64197)
+position = Vector2(-5271.5166, -677.90125)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_107" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-8054.7144, -888.8157)
+position = Vector2(-5301.19, -734.07495)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_108" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4587.839, 1546.4165)
+position = Vector2(-1834.3145, 1701.1572)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_109" parent="Node2D" instance=ExtResource("11_bg236")]
-position = Vector2(-4605.865, -1539.7407)
+position = Vector2(-1852.3408, -1385)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_110" parent="Node2D" instance=ExtResource("12_upujw")]
-position = Vector2(-4541.7764, -9.341572)
+position = Vector2(-1788.252, 145.39915)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_111" parent="Node2D" instance=ExtResource("12_upujw")]
-position = Vector2(-4959.259, 72.22841)
+position = Vector2(-2205.7344, 226.96913)
 rotation = -3.1075401
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="enemy_112" parent="Node2D" instance=ExtResource("12_upujw")]
-position = Vector2(-4959.298, -92.77461)
+position = Vector2(-2205.7734, 61.96611)
 rotation = 0.977156
 
-[node name="limit" type="StaticBody2D" parent="."]
+[node name="bullet_limit" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="limit"]
-position = Vector2(0, 113)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit"]
+position = Vector2(-33, 113)
 shape = SubResource("RectangleShape2D_bg236")
 
-[node name="limit2" type="StaticBody2D" parent="."]
+[node name="bullet_limit_1" type="Area2D" parent="bullet_limit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit/bullet_limit_1"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_upujw")
+
+[node name="bullet_limit2" type="StaticBody2D" parent="."]
 position = Vector2(385, 0)
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="limit2"]
-position = Vector2(0, 113)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit2"]
+position = Vector2(31, 109)
 shape = SubResource("RectangleShape2D_bg236")
+
+[node name="bullet_limit_2" type="Area2D" parent="bullet_limit2"]
+position = Vector2(-832, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit2/bullet_limit_2"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_upujw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 111.5)
+shape = SubResource("RectangleShape2D_aa4c8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(382, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 111.5)
+shape = SubResource("RectangleShape2D_aa4c8")
+
+[connection signal="body_entered" from="bullet_limit/bullet_limit_1" to="." method="_on_bullet_limit_1_body_entered"]
+[connection signal="body_entered" from="bullet_limit2/bullet_limit_2" to="." method="_on_bullet_limit_2_body_entered"]
+
+[editable path="Mars"]

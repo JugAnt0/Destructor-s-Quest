@@ -7,14 +7,16 @@ var phase_2_triggered = false
 @onready var icon: Sprite2D = $Icon
 @onready var progress_bar: ProgressBar = $ProgressBar
 signal died
+@onready var progress_bar2: ProgressBar = $ProgressBar2
 
 var player : CharacterBody2D
 
-var health = 100
+var health = 200
 @onready var enemy: Area2D = $"."
 var dead := false
 
 
+			
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
@@ -27,6 +29,7 @@ func _physics_process(_delta):
 
 
 	progress_bar.value = health
+	progress_bar2.value = health
 
 	
 	
@@ -42,7 +45,7 @@ func _physics_process(_delta):
 		await get_tree().create_timer(1.5).timeout
 		queue_free()
 		emit_signal("died")
-
+		
 func _on_body_entered(body: Node2D) -> void:
 	if invincible:
 		return
