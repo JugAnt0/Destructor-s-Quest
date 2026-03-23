@@ -1,7 +1,9 @@
 extends Area2D
 @onready var ex: GPUParticles2D = $mars_explosion
 @onready var explosion_sound: AudioStreamPlayer2D = $explosion_sound
-
+@onready var collision: CollisionShape2D = $CollisionShape2D
+var invincible = false
+var phase_2_triggered = false
 @onready var icon: Sprite2D = $Icon
 @onready var progress_bar: ProgressBar = $ProgressBar
 signal died
@@ -42,9 +44,12 @@ func _physics_process(_delta):
 		emit_signal("died")
 
 func _on_body_entered(body: Node2D) -> void:
+	if invincible:
+		return
+	
 	explosion_sound.play()
 	if body.is_in_group("player"):
-		body.take_damage(1, global_position)		
+		body.take_damage(1, global_position)
 	if body.is_in_group("player_bullet"):
 		ex.restart()
 		body.queue_free()

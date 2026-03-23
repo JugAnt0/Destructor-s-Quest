@@ -47,7 +47,7 @@ func start_invincibility():
 func shoot():
 	if !can_shoot:
 		return
-	
+
 	can_shoot = false
 	
 	var bullet = bullet_scene.instantiate()

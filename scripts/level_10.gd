@@ -1,8 +1,21 @@
 extends Node2D
 @onready var mars: Area2D = $Mars
+@onready var start: AnimationPlayer = $Mars/start
+@onready var timer: Timer = $Timer
+@onready var limit: StaticBody2D = $limit
 
+var bossman : Area2D
 var last_health = Stats.vida
 # Called when the node enters the scene tree for the first time.
+
+func start_phase_2():
+	bossman.invincible = true
+	start.play("move_out")
+	limit.queue_free()
+	await start.animation_finished
+
+	bossman.invincible = false
+	
 func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
@@ -10,12 +23,19 @@ func _ready() -> void:
 	LevelManager.set_next_level("res://scenes/credits.tscn")
 	mars.died.connect(_on_mars_died)
 	BackgroundMusic.play_boss()
+	bossman = get_tree().get_first_node_in_group("boss")
+	
 	
 func _on_mars_died():
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 	BackgroundMusic.play_normal()
-func _process(_delta: float) -> void:
 	
+	
+func _process(_delta: float) -> void:
+	if bossman.health <= 50 and !bossman.phase_2_triggered:
+		bossman.phase_2_triggered = true
+		start_phase_2()
+		
 	# Detect when player loses health
 	if Stats.vida < last_health:
 		play_explosion(last_health)
