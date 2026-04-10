@@ -73,6 +73,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
+	
 	explosion_sound.play()
 	if body.is_in_group("player"):
 		body.take_damage(1, global_position)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cojbi2p5brika"]
+[gd_scene load_steps=16 format=3 uid="uid://cojbi2p5brika"]
 
 [ext_resource type="Script" uid="uid://cooid3r876vk3" path="res://scripts/level_8.gd" id="1_ppfpn"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_ysmsy"]
@@ -48,6 +48,9 @@ _data = {
 &"RESET": SubResource("Animation_0tnpc"),
 &"move_map": SubResource("Animation_gee14")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ijp0"]
+size = Vector2(23, 1055)
 
 [node name="level_8" type="Node2D"]
 script = ExtResource("1_ppfpn")
@@ -1325,3 +1328,47 @@ position = Vector2(1723, 76)
 position = Vector2(-1188, 28)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="bullet_limit_1" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_1"]
+position = Vector2(664, 103)
+shape = SubResource("RectangleShape2D_3ijp0")
+
+[node name="bullet_limit_2" type="Area2D" parent="."]
+position = Vector2(262.00003, -174.00002)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_2"]
+position = Vector2(611.94653, 40.81044)
+shape = SubResource("RectangleShape2D_3ijp0")
+
+[node name="bullet_limit_3" type="Area2D" parent="."]
+position = Vector2(286.99997, -440.00006)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_3"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_3ijp0")
+
+[node name="bullet_limit_4" type="Area2D" parent="."]
+position = Vector2(-447, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_4"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_3ijp0")
+
+[connection signal="body_entered" from="bullet_limit_1" to="." method="_on_bullet_limit_1_body_entered"]
+[connection signal="body_entered" from="bullet_limit_2" to="." method="_on_bullet_limit_2_body_entered"]
+[connection signal="body_entered" from="bullet_limit_3" to="." method="_on_bullet_limit_3_body_entered"]
+[connection signal="body_entered" from="bullet_limit_4" to="." method="_on_bullet_limit_4_body_entered"]

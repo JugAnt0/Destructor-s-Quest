@@ -1,24 +1,42 @@
 extends Node2D
 
+
 var last_health = Stats.vida
-# Called when the node enters the scene tree for the first time.
+
+
+	
+func _on_bullet_limit_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_3_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_4_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
 func _ready() -> void:
 	Limits.down_limit = 217
 	Limits.right_limit = 384
 	Limits.left_limit = 0
 	LevelManager.set_next_level("res://scenes/level_2.tscn")
-	Stats.max_vida = 5
-	Stats.vida = 5
-	Stats.daño = 1
-	Stats.velocidad = 100.0
-	Stats.reload_speed = 1
-	Stats.propulsion_distance = 20
-	Stats.propulsion_reload_time = 2
-	Stats.piercing = 0
-	Stats.bullets_per_shot = 1
-	Stats.alcance = 100
-	Stats.knockback = Vector2.ZERO
-	Stats.player_knockback = 75
+	Stats.max_vida = Stats.d_max_vida
+	Stats.vida = Stats.d_vida
+	Stats.daño = Stats.d_daño
+	Stats.velocidad = Stats.d_velocidad
+	Stats.reload_speed = Stats.d_reload_speed
+	Stats.propulsion_distance = Stats.d_propulsion_distance
+	Stats.propulsion_reload_time = Stats.d_propulsion_reload_time
+	Stats.piercing = Stats.d_piercing
+	Stats.bullets_per_shot = Stats.d_bullets_per_shot
+	Stats.alcance = Stats.d_alcance
+	Stats.knockback = Stats.d_knockback
+	Stats.player_knockback = Stats.d_player_knockback
 
 
 func _process(_delta: float) -> void:

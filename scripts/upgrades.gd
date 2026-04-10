@@ -8,7 +8,8 @@ var upgrades = [
 	preload("res://scenes/upgrade_container.tscn"),
 	preload("res://scenes/cura.tscn"),
 	preload("res://scenes/speed_upgrade.tscn"),
-	preload("uid://b3j1oy0ltsnmo")
+	preload("res://scenes/pierce_upgrade.tscn"),
+	preload("res://scenes/knockback_upgrade.tscn")
 ]
 
 func _ready():

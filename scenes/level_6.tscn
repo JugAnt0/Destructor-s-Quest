@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://io8iqo00v4jm"]
+[gd_scene load_steps=14 format=3 uid="uid://io8iqo00v4jm"]
 
 [ext_resource type="Script" uid="uid://cd62bqepwvuo6" path="res://scripts/level_6.gd" id="1_isi3j"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_kuph3"]
@@ -46,6 +46,9 @@ _data = {
 &"RESET": SubResource("Animation_0tnpc"),
 &"move_map": SubResource("Animation_gee14")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isi3j"]
+size = Vector2(23, 1055)
 
 [node name="level_6" type="Node2D"]
 script = ExtResource("1_isi3j")
@@ -1325,3 +1328,47 @@ rotation = 1.6016035
 position = Vector2(63, 2008)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="bullet_limit_1" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_1"]
+position = Vector2(664, 117)
+shape = SubResource("RectangleShape2D_isi3j")
+
+[node name="bullet_limit_2" type="Area2D" parent="."]
+position = Vector2(262.00003, -174.00002)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_2"]
+position = Vector2(614.90686, 70.81439)
+shape = SubResource("RectangleShape2D_isi3j")
+
+[node name="bullet_limit_3" type="Area2D" parent="."]
+position = Vector2(286.99997, -440.00006)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_3"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_isi3j")
+
+[node name="bullet_limit_4" type="Area2D" parent="."]
+position = Vector2(-447, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_4"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_isi3j")
+
+[connection signal="body_entered" from="bullet_limit_1" to="." method="_on_bullet_limit_1_body_entered"]
+[connection signal="body_entered" from="bullet_limit_2" to="." method="_on_bullet_limit_2_body_entered"]
+[connection signal="body_entered" from="bullet_limit_3" to="." method="_on_bullet_limit_3_body_entered"]
+[connection signal="body_entered" from="bullet_limit_4" to="." method="_on_bullet_limit_4_body_entered"]

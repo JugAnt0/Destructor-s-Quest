@@ -1,14 +1,30 @@
 extends Node2D
 
 var last_health = Stats.vida
-# Called when the node enters the scene tree for the first time.
+
+
+	
+func _on_bullet_limit_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_3_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+func _on_bullet_limit_4_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_bullet"):
+		body.queue_free()
+		
+		
 func _ready() -> void:
 	Limits.down_limit =300
 	Limits.right_limit = 450
 	LevelManager.set_next_level("res://scenes/level_3.tscn")
-	
-
-
 func _process(_delta: float) -> void:
 	
 	# Detect when player loses health

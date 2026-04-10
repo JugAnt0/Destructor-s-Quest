@@ -3,6 +3,7 @@ extends Node2D
 @onready var start: AnimationPlayer = $Mars/start
 
 
+
 var bossman : Area2D
 var last_health = Stats.vida
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +28,7 @@ func _process(_delta: float) -> void:
 	if bossman.health <= 120 and !bossman.phase_2_triggered:
 		bossman.phase_2_triggered = true
 		start.play("move_out")
-		await get_tree().create_timer(30).timeout
+		await get_tree().create_timer(20).timeout
 		start.play("move_in")
 		bossman.health = 150
 		

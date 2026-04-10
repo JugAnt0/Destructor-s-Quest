@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvju07rid7usb"]
+[gd_scene load_steps=13 format=3 uid="uid://cvju07rid7usb"]
 
 [ext_resource type="Script" uid="uid://cfcb8uo2k8oyx" path="res://scripts/level_2.gd" id="1_ne2mo"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="1_y0kc7"]
@@ -45,6 +45,9 @@ _data = {
 &"RESET": SubResource("Animation_0tnpc"),
 &"move_map": SubResource("Animation_gee14")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne2mo"]
+size = Vector2(23, 1055)
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_ne2mo")
@@ -524,3 +527,49 @@ position = Vector2(846, 84)
 position = Vector2(410, 103)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="limits" type="Node2D" parent="."]
+
+[node name="bullet_limit_1" type="Area2D" parent="limits"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/bullet_limit_1"]
+position = Vector2(480, 114)
+shape = SubResource("RectangleShape2D_ne2mo")
+
+[node name="bullet_limit_2" type="Area2D" parent="limits"]
+position = Vector2(262.00003, -174.00002)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/bullet_limit_2"]
+position = Vector2(487.87646, 93.646194)
+shape = SubResource("RectangleShape2D_ne2mo")
+
+[node name="bullet_limit_3" type="Area2D" parent="limits"]
+position = Vector2(286.99997, -440.00006)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/bullet_limit_3"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_ne2mo")
+
+[node name="bullet_limit_4" type="Area2D" parent="limits"]
+position = Vector2(-447, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/bullet_limit_4"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_ne2mo")
+
+[connection signal="body_entered" from="limits/bullet_limit_1" to="." method="_on_bullet_limit_1_body_entered"]
+[connection signal="body_entered" from="limits/bullet_limit_2" to="." method="_on_bullet_limit_2_body_entered"]
+[connection signal="body_entered" from="limits/bullet_limit_3" to="." method="_on_bullet_limit_3_body_entered"]
+[connection signal="body_entered" from="limits/bullet_limit_4" to="." method="_on_bullet_limit_4_body_entered"]

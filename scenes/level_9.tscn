@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c70xn6xecbfos"]
+[gd_scene load_steps=14 format=3 uid="uid://c70xn6xecbfos"]
 
 [ext_resource type="Script" uid="uid://d2twrp1ekvjr4" path="res://scripts/level_9.gd" id="1_wicpl"]
 [ext_resource type="Texture2D" uid="uid://d1yelgq336gfv" path="res://assets/sprites/small_galaxy_1.png" id="2_8xf63"]
@@ -46,6 +46,9 @@ _data = {
 &"RESET": SubResource("Animation_0tnpc"),
 &"move_map": SubResource("Animation_gee14")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wicpl"]
+size = Vector2(23, 1055)
 
 [node name="level_9" type="Node2D"]
 script = ExtResource("1_wicpl")
@@ -1317,3 +1320,47 @@ position = Vector2(1464, 100)
 position = Vector2(1322, 40)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="bullet_limit_1" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_1"]
+position = Vector2(408, 55)
+shape = SubResource("RectangleShape2D_wicpl")
+
+[node name="bullet_limit_2" type="Area2D" parent="."]
+position = Vector2(262.00003, -174.00002)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_2"]
+position = Vector2(415.8368, 123.55083)
+shape = SubResource("RectangleShape2D_wicpl")
+
+[node name="bullet_limit_3" type="Area2D" parent="."]
+position = Vector2(286.99997, -440.00006)
+rotation = 1.5694721
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_3"]
+position = Vector2(414.5, 110.5)
+shape = SubResource("RectangleShape2D_wicpl")
+
+[node name="bullet_limit_4" type="Area2D" parent="."]
+position = Vector2(-447, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_limit_4"]
+position = Vector2(422, 111)
+shape = SubResource("RectangleShape2D_wicpl")
+
+[connection signal="body_entered" from="bullet_limit_1" to="." method="_on_bullet_limit_1_body_entered"]
+[connection signal="body_entered" from="bullet_limit_2" to="." method="_on_bullet_limit_2_body_entered"]
+[connection signal="body_entered" from="bullet_limit_3" to="." method="_on_bullet_limit_3_body_entered"]
+[connection signal="body_entered" from="bullet_limit_4" to="." method="_on_bullet_limit_4_body_entered"]
