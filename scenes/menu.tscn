@@ -1,72 +1,179 @@
-[gd_scene load_steps=8 format=3 uid="uid://y1cqgpcgjyo6"]
+[gd_scene load_steps=10 format=3 uid="uid://y1cqgpcgjyo6"]
 
 [ext_resource type="Script" uid="uid://uktu3ebacq6" path="res://scripts/node.gd" id="1_v86rl"]
 [ext_resource type="Texture2D" uid="uid://dt0m8vvdhb8nf" path="res://assets/sprites/Retry.png" id="2_13sgg"]
+[ext_resource type="Texture2D" uid="uid://3e72ed64551m" path="res://assets/sprites/Go_Back.png" id="2_i6lef"]
+[ext_resource type="Texture2D" uid="uid://b4th0wvtwu38r" path="res://assets/sprites/Go_Back_hover.png" id="3_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dm8et8206lu8m" path="res://assets/sprites/Retry_hover.png" id="3_i6lef"]
 [ext_resource type="Texture2D" uid="uid://dg4122fddnnn" path="res://assets/sprites/Continue.png" id="4_70i5f"]
 [ext_resource type="Texture2D" uid="uid://cuy3u20m1j16q" path="res://assets/sprites/Continue_hover.png" id="5_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://c57uuufhfmu2l" path="res://assets/sprites/Settings.png" id="6_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://oyaqr6l8byqp" path="res://assets/sprites/Settings_hover.png" id="7_6cdou"]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
 script = ExtResource("1_v86rl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="settings_menu" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ColorRect" type="ColorRect" parent="settings_menu"]
 offset_left = 200.0
-offset_top = 136.0
-offset_right = -202.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 0.63529414, 1)
+offset_top = 122.0
+offset_right = 950.0
+offset_bottom = 585.0
+color = Color(0, 0.7019608, 1, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 175.0
-offset_top = 111.0
-offset_right = -177.0
-offset_bottom = -74.0
+[node name="ColorRect2" type="ColorRect" parent="settings_menu"]
+offset_left = 150.0
+offset_top = 85.0
+offset_right = 1000.0
+offset_bottom = 625.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39607844)
 
-[node name="Label2" type="Label" parent="CanvasLayer"]
-offset_left = 375.0
-offset_top = 193.0
-offset_right = 803.0
-offset_bottom = 257.0
+[node name="Label2" type="Label" parent="settings_menu"]
+offset_left = 497.0
+offset_top = 142.0
+offset_right = 665.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Volume"
+
+[node name="Label" type="Label" parent="settings_menu"]
+offset_left = 493.0
+offset_top = 142.0
+offset_right = 661.0
+offset_bottom = 190.0
+theme_override_font_sizes/font_size = 48
+text = "Volume"
+
+[node name="go_back" type="TextureButton" parent="settings_menu"]
+offset_left = 197.0
+offset_top = 457.0
+offset_right = 261.0
+offset_bottom = 473.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_i6lef")
+texture_hover = ExtResource("3_70i5f")
+
+[node name="Volume_slider" type="HSlider" parent="settings_menu"]
+layout_direction = 2
+offset_left = 268.0
+offset_top = 173.0
+offset_right = 428.0
+offset_bottom = 189.0
+scale = Vector2(4, 4)
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Stats" type="Node" parent="settings_menu"]
+
+[node name="damage_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 256.0
+offset_top = 255.0
+offset_right = 296.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 32
+
+[node name="reload_speed_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 625.0
+offset_top = 258.0
+offset_right = 665.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 32
+
+[node name="speed_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 255.0
+offset_top = 382.0
+offset_right = 295.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 32
+
+[node name="max_health_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 255.0
+offset_top = 302.0
+offset_right = 295.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 32
+
+[node name="piercing_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 255.0
+offset_top = 342.0
+offset_right = 295.0
+offset_bottom = 406.0
+theme_override_font_sizes/font_size = 32
+
+[node name="knockback_label" type="Label" parent="settings_menu/Stats"]
+offset_left = 625.0
+offset_top = 302.0
+offset_right = 665.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 32
+
+[node name="main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.087000005
+anchor_bottom = 0.079
+offset_left = 200.0
+offset_top = 122.0
+offset_right = 857.68896
+offset_bottom = 538.65
+color = Color(1, 1, 0.63529414, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="main"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 85.0
+offset_right = 1000.0
+offset_bottom = 625.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39607844)
+
+[node name="Label2" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 197.0
+offset_right = 807.0
+offset_bottom = 261.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Game Paused"
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 370.0
-offset_top = 188.0
-offset_right = 798.0
-offset_bottom = 252.0
+[node name="Label" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 194.0
+offset_right = 802.0
+offset_bottom = 258.0
 theme_override_font_sizes/font_size = 64
 text = "Game Paused"
 
-[node name="Retry" type="TextureButton" parent="CanvasLayer"]
-offset_left = 386.0
-offset_top = 405.0
-offset_right = 450.0
-offset_bottom = 421.0
+[node name="Retry" type="TextureButton" parent="main"]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 459.00003
+offset_right = 453.0
+offset_bottom = 475.00003
 scale = Vector2(6, 6)
 texture_normal = ExtResource("2_13sgg")
 texture_hover = ExtResource("3_i6lef")
 
-[node name="R" type="Label" parent="CanvasLayer/Retry"]
+[node name="R" type="Label" parent="main/Retry"]
 visible = false
 layout_mode = 0
 offset_left = 23.000002
@@ -76,16 +183,17 @@ offset_bottom = 29.333334
 scale = Vector2(0.25, 0.25)
 text = "Press 'R'"
 
-[node name="continue" type="TextureButton" parent="CanvasLayer"]
-offset_left = 563.0
-offset_top = 330.0
-offset_right = 627.0
-offset_bottom = 346.0
+[node name="continue" type="TextureButton" parent="main"]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 353.0
+offset_right = 630.0
+offset_bottom = 369.0
 scale = Vector2(6, 6)
 texture_normal = ExtResource("4_70i5f")
 texture_hover = ExtResource("5_mj5lg")
 
-[node name="Space" type="Label" parent="CanvasLayer/continue"]
+[node name="Space" type="Label" parent="main/continue"]
 visible = false
 layout_mode = 0
 offset_left = 24.166668
@@ -95,16 +203,17 @@ offset_bottom = 28.5
 scale = Vector2(0.25, 0.25)
 text = "SPACE"
 
-[node name="settings" type="TextureButton" parent="CanvasLayer"]
-offset_left = 205.00002
-offset_top = 330.0
-offset_right = 269.0
-offset_bottom = 346.0
+[node name="settings" type="TextureButton" parent="main"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 353.0
+offset_right = 265.0
+offset_bottom = 369.0
 scale = Vector2(6, 6)
 texture_normal = ExtResource("6_ufwb2")
 texture_hover = ExtResource("7_6cdou")
 
-[node name="T" type="Label" parent="CanvasLayer/settings"]
+[node name="T" type="Label" parent="main/settings"]
 visible = false
 layout_mode = 0
 offset_left = 23.666664
@@ -114,6 +223,8 @@ offset_bottom = 29.333334
 scale = Vector2(0.25, 0.25)
 text = "Press 'T'"
 
-[connection signal="pressed" from="CanvasLayer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="CanvasLayer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="settings_menu/go_back" to="." method="_on_go_back_pressed"]
+[connection signal="value_changed" from="settings_menu/Volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="main/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="main/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
