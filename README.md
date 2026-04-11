@@ -10,10 +10,10 @@ Will you survive long enough to end the war?
 
 Controls:
 
-WASD / Arrow Keys → Move
-Right Click → Shoot
-ESC → Open Menu / Pause
-Spacebar → Start Game
+* WASD / Arrow Keys → Move
+* Right Click → Shoot
+* ESC → Open Menu / Pause
+* Spacebar → Start Game
 
 ## assets
 
