@@ -11,6 +11,7 @@
 * Sound Design / Sound effects by freesound_community from Pixabay
   
 ## scenes
-This game, and by extension this repo, features 41 scenes. The most important being, enemy 1-4, game (level 1), level 2-9, upgrade container (and the other upgrades), and the bullets. The Globals are: Limits, Level_Manager, Stats, Herts, and Background_music
+This game, and by extension this repo, features 41 scenes. The most important being, enemy 1-4, game , level 2-9, upgrade container, individual upgrades,and the bullets. 
+Global Scenes: Limits, Level_Manager, Stats, Herts, and Background_music
 ## scripts
 All code was done using Gdscript
