@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://y1cqgpcgjyo6"]
+
+[ext_resource type="Script" uid="uid://uktu3ebacq6" path="res://scripts/node.gd" id="1_v86rl"]
+[ext_resource type="Texture2D" uid="uid://dt0m8vvdhb8nf" path="res://assets/sprites/Retry.png" id="2_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dm8et8206lu8m" path="res://assets/sprites/Retry_hover.png" id="3_i6lef"]
+[ext_resource type="Texture2D" uid="uid://dg4122fddnnn" path="res://assets/sprites/Continue.png" id="4_70i5f"]
+[ext_resource type="Texture2D" uid="uid://cuy3u20m1j16q" path="res://assets/sprites/Continue_hover.png" id="5_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://c57uuufhfmu2l" path="res://assets/sprites/Settings.png" id="6_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://oyaqr6l8byqp" path="res://assets/sprites/Settings_hover.png" id="7_6cdou"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_v86rl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 136.0
+offset_right = -202.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.63529414, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 175.0
+offset_top = 111.0
+offset_right = -177.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39607844)
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 375.0
+offset_top = 193.0
+offset_right = 803.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Game Paused"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 370.0
+offset_top = 188.0
+offset_right = 798.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 64
+text = "Game Paused"
+
+[node name="Retry" type="TextureButton" parent="CanvasLayer"]
+offset_left = 386.0
+offset_top = 405.0
+offset_right = 450.0
+offset_bottom = 421.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_13sgg")
+texture_hover = ExtResource("3_i6lef")
+
+[node name="R" type="Label" parent="CanvasLayer/Retry"]
+visible = false
+layout_mode = 0
+offset_left = 23.000002
+offset_top = 13.333334
+offset_right = 91.0
+offset_bottom = 29.333334
+scale = Vector2(0.25, 0.25)
+text = "Press 'R'"
+
+[node name="continue" type="TextureButton" parent="CanvasLayer"]
+offset_left = 563.0
+offset_top = 330.0
+offset_right = 627.0
+offset_bottom = 346.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("4_70i5f")
+texture_hover = ExtResource("5_mj5lg")
+
+[node name="Space" type="Label" parent="CanvasLayer/continue"]
+visible = false
+layout_mode = 0
+offset_left = 24.166668
+offset_top = 12.500001
+offset_right = 92.16667
+offset_bottom = 28.5
+scale = Vector2(0.25, 0.25)
+text = "SPACE"
+
+[node name="settings" type="TextureButton" parent="CanvasLayer"]
+offset_left = 205.00002
+offset_top = 330.0
+offset_right = 269.0
+offset_bottom = 346.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("6_ufwb2")
+texture_hover = ExtResource("7_6cdou")
+
+[node name="T" type="Label" parent="CanvasLayer/settings"]
+visible = false
+layout_mode = 0
+offset_left = 23.666664
+offset_top = 13.333334
+offset_right = 91.666664
+offset_bottom = 29.333334
+scale = Vector2(0.25, 0.25)
+text = "Press 'T'"
+
+[connection signal="pressed" from="CanvasLayer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/settings" to="." method="_on_settings_pressed"]
